@@ -1,0 +1,99 @@
+.TH feelc 1L "April, 1994"
+.SH NAME
+feelc \- Feel bytecode compiler
+.SH SYNOPSIS
+.B feelc
+[-o \fIimage\fR] files [other options] 
+
+.SH DESCRIPTION
+The Feel bytecode compiler is implemented as a Feel application.
+The code produced is quite respectable, and should give significant
+improvements over interpreted code.
+.LP
+The compiled code does not do any error checking on car, cdr,
+vector-ref and similar functions. A later extension will define these
+functions as generic so that type errors can be detected.
+
+.SH COMPILING
+.LP
+For each EuLisp module file, \fImodule\fR.em, given as argument, feelc
+produces a standard compiled module file, \fImodule\fR.sc, an interface
+file, \fImodule\fR.i, and a fast-load file, \fImodule\fR.fm.
+.LP
+
+Modules are compiled in the order presented -- since the compilation
+of a module relies upon the existence of an interface file for each
+module that it imports, directly or indirectly, these modules must be
+given in the order that they would normally be loaded. For example,
+if module \fItop\fR imports module \fImiddle\fR, which in turn
+imports module \fIbottom\fR, the compilation of these modules
+would be specified by typing
+.LP
+feelc \fIbottom\fR.em \fImiddle\fR.em \fItop\fR.em
+.LP
+WARNING -- modules are loaded before being compiled, so do not attempt
+to compile modules that execute non-terminating forms at top-level.
+
+The compiler generates many incomprehensible messages -- these can
+mostly be ignored, unless the process stops prematurely, in which case
+they may give some clue as to just what went wrong. Be advised that
+compiling large files, and linking in general, can take a long time...
+
+.SH OPTIONS
+.TP
+.BI "-o " image
+Link specified .sc files and/or results of compilation of specified .em 
+files into a single bytecoded image, \fIimage\fR, stored as
+\fIimage\fR.ebc and \fIimage\fR.est. This image will also incorporate
+the kernel Feel modules.
+.LP
+All other options are passed on to each invocation of Feel by the
+feelc shell script. The default heap size when compiling is 10Mb.
+
+.SH LOADING
+.LP
+To load a bytecode image, \fImyimage\fR, invoke Feel with 
+.LP
+feel -boot \fImyimage\fR
+.LP
+To fast-load a specific compiled module, \fImymodule\fR type
+.LP
+(!!> \fImymodule\fR) 
+.LP
+at top-level (this will not work if the -noimage option is specified).
+
+.SH ENVIRONMENT VARIABLES
+.TP
+.BI FEEL_OBJS_PATH
+Where to find compiled module files when fast-loading or linking -- defaults to .:${FEEL_PATH}/Boot/CBoot:${FEEL_PATH}/Boot/Compiler
+.TP
+.BI FEEL_INTF_PATH
+Where to find interface files when compiling -- defaults to .:${FEEL_PATH}/Boot/Interfaces:${FEEL_PATH}/Boot/CBoot:${FEEL_PATH}/Boot/Compiler
+.IP 
+.LP
+.SH FILES
+.IP ${FEEL_PATH}/bin/feelc
+The Feel bytecode compiler startup script
+.IP ${FEEL_PATH}/Boot/Compiler
+Directory containing compiler and loader sources, compiled module files,
+and interfaces.
+.IP ${FEEL_PATH}/Boot/Interfaces
+Directory containing interface files to C modules
+.IP ${FEEL_PATH}/Boot/CBoot
+Directory containing standard compiled modules and interfaces.
+
+.LP
+.SH SEE ALSO
+.IP feel                
+- EuLisp interpreter
+.IP ${FEEL_PATH}/Man/feel.dvi
+The Feel manual
+.IP ${FEEL_PATH}/Man/eulisp.dvi
+The EuLisp definition 
+
+.SH AUTHOR
+Duncan Batey, d'apres Pete Broadbery.
+
+.SH BUGS
+No optimisation at present. Mail to eubug@maths.bath.ac.uk if you find
+anything really nasty.

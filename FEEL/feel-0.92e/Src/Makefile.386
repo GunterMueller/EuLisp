@@ -1,0 +1,338 @@
+# ###################################################################### #
+# The FEEL makefile...                                                   #
+# ###################################################################### #
+
+#
+# $Id: Makefile.386,v 1.1 1994/03/15 10:02:25 djb Exp $
+#
+# Makefile for msdos machines. 
+
+##########################################################################
+# Customisation section...                                               #
+##########################################################################
+
+# Edit the following for your favourite machine.
+
+# Where Src directory lives
+BASE = \langs\feel
+#/net/brad/denton_export/denton/You/NewYou
+
+# Feel knows about the systems below:
+# Stardent RS6000 Gould Sun4 Sun3 Clipper Vax Alliant Meiko 386
+
+# Here is some info in case you have something different:
+#     WITH_SYSTEMV_SOCKETS - System V IP communication
+#     WITH_BSD_SOCKETS     - BSD IP communication (4.3, or see defs.h)
+#     WITH_SYSTEMV_SIGNALS - System V signalling
+#     WITH_BSD_SIGNALS     - BSD signalling
+#     DONT_HAVE_STDLIB_H   - half-hearted ANSI without stdlib.h
+#     ALIGN8 - if the machine is fussy about 8 byte alignments, e.g., doubles
+#     TRAP_ALL		   - vauge attempt to catch segvs, buses, etc. implied by 
+#			     MACHINE=SYSTEMV
+# Architecture and machine type...
+# MACHINE is ANY,BSD or SystemV. 
+# ANY is any 'reasonable' architecture --- things that run UNIX, and many others
+# BSD is supported on any machine with a *-switch.s file in this 
+# directory. See the note in the manual for what it does, and how to port it.
+# SystemV is for sun3/4, Stardents and Alliant concentrix machines 
+# It ought to work for any UNIX machine that has shared memory primitives 
+# and that BSD config. works for.
+
+# Systems not listed but have worked in the 'ANY' config:
+# DEC MIPS (try hacking the ard-switch code for BSD version)
+# 
+
+# Extra goodies, won't necesarily work
+# -DBCI 		Want a bytecode interpreter?
+# -DLOWTAGINTS		Low tag integers kind of work, 
+#			but break the addons code (and maybe other things)
+#     READLINE		   - used to work. Bit rot may have set in here.
+
+# common options
+
+# how to optimise your code
+STDOFLAGS = # -DDEBUG
+
+# everybody needs these
+STDFLAGS =  -DWITH_FUDGE 
+
+# Stardent
+#MFLAGS = -DWITH_SYSTEMV_SOCKETS \
+#        -DDONT_HAVE_STDLIB_H -DBCI
+#OFLAGS =  -O -inline 
+#MACHINE = BSD # Can be SYSTEMV
+#ARCH = ard#a43
+#CC = cc  #-43
+#LIBS = -lm
+
+# Sun4
+#MFLAGS = -DWITH_SYSTEMV_SOCKETS -DDONT_HAVE_STDLIB_H -DBCI
+#OFLAGS = -O  
+#MACHINE = BSD #or SYSTEMV, for the keen
+#ARCH = sun4
+#CC = gcc
+#LIBS = -lm
+
+# RS6000
+#MFLAGS = -DWITH_SYSTEMV_SOCKETS \
+#         -DWITH_SYSTEMV_SIGNALS -DTRAP_ALL -D_ALL_SOURCE
+#MACHINE = ANY
+#ARCH = any
+#CC = xlc
+#LIBS = -lm
+
+# Gould
+#MFLAGS = -DWITH_BSD_SIGNALS \
+#        -DDONT_HAVE_STDLIB_H  -DALIGN8
+#MACHINE = ANY
+#ARCH = any
+#CC = gcc
+#LIBS = -lm
+
+
+# Sun3
+#MFLAGS =  -DWITH_SYSTEMV_SOCKETS -DDONT_HAVE_STDLIB_H 
+#MACHINE = BSD
+#ARCH = sun3
+#CC = gcc
+#LIBS = -lm
+
+# Clipper
+#MFLAGS = -DDONT_HAVE_STDLIB_H  -DWITH_BSD_SIGNALS -DALIGN8
+#MACHINE = BSD
+#ARCH = clip
+#CC = ncc
+#LIBS = /lib/crt0.o
+
+# Vax
+#MFLAGS = -mg -O -DDONT_HAVE_STDLIB_H
+#MACHINE = ANY
+#ARCH = any
+#CC = gcc
+#LIBS = -lm
+
+# Alliant
+#MFLAGS = -DWITH_BSD_SIGNALS -DWITH_BSD_SOCKETS -DALIGN8
+#MACHINE = SYSTEMV
+#ARCH = i860
+#CC = fxc
+#LIBS = -lm
+
+# Meiko
+# MFLAGS =
+# MACHINE = ANY
+# CC = mcc
+# LIBS = -lm
+# EXTRASRCS = 
+# EXTRAOBJS =
+
+# 386
+# ...
+XFLAGS = -DDONT_HAVE_STDLIB_H -DWITH_FUDGE -DBCI -Dmsdos
+OFLAGS =  -O  
+MACHINE = BSD
+ARCH = 386
+CC = gcc  #-43
+LIBS = -lm
+
+# i860
+# Not an alliant? 
+# Try MACHINE=BSD, then change the shared memory primitives around
+#
+
+# ################################################################### #
+# Sundry constants						      #
+# ################################################################### #
+LEX = flex
+YACC = bison -y -t
+
+# Local module path
+
+MODULE_PATH = ${BASE}/Modules/
+
+# Semaphoring...
+# Hardware semaphores are OK, but
+SEMAPHORES = SOFTWARE
+
+# Do the business...
+
+# ###################################################################### #
+# Working section...                                                     #
+# ###################################################################### #
+
+LOAD_PATH_NAME = FEEL_LOAD_PATH
+
+MACHINEABBREV = ${ARCH}
+DATE = `date`
+
+# invent flags
+FLAGS = ${XFLAGS} ${STDFLAGS}
+
+# Reader specific sources...
+
+READERSOURCES = lex-yy.c y-tab.c alloca.c
+
+READEROBJECTS = lex-yy.o y-tab.o alloca.o
+
+# Default Elvira sources...
+
+ELVIRASOURCES = initelv.c
+
+ELVIRAOBJECTS = initelv.o
+
+# Garbage collector sources
+
+GCOBJECTS = ../CGC/gc.o remalloc.o 
+
+# Main sources...
+
+SOURCES = copyalloc.c copy.c arith.c basic.c chars.c error.c \
+	  main.c modules.c print.c read.c set.c streams.c \
+	  table.c vectors.c bootstrap.c lists.c listops.c \
+	  class.c slots.c ngenerics.c \
+          symboot.c modboot.c toplevel.c root.c specials.c \
+	  calls.c ccc.c macros.c system.c semaphores.c state.c \
+	  format.c sockets.c sio.c modops.c lamport.c bvecs2.c 
+
+OBJS1 =  copyalloc.o copy.o arith.o basic.o chars.o error.o 
+OBJS2 =	  main.o modules.o print.o read.o set.o streams.o 
+OBJS3 =	  table.o vectors.o bootstrap.o lists.o listops.o 
+OBJS4 = 	  class.o slots.o ngenerics.o  
+OBJS5 =           symboot.o modboot.o toplevel.o root.o specials.o 
+OBJS6 = 	  calls.o ccc.o macros.o system.o semaphores.o state.o 
+OBJS7 = 	  format.o sockets.o sio.o modops.o lamport.o bvecs2.o 
+
+OBJECTS = ${OBJS1} ${OBJS2} ${OBJS3} ${OBJS4} ${OBJS5} ${OBJS6} ${OBJS7} 
+
+HDRS = bootstrap.h   generics.h    modules.h     specials.h    toplevel.h \
+	calls.h       global.h      ngenerics.h   state.h       vectors.h \
+	ccc.h         lamport.h     objects.h     structs.h     version.h \
+	class.h       lex_global.h  root.h        symboot.h     y-tab.h	  \
+	copy.h        listops.h     runtime.h     syssockets.h	funcalls.h weak.h \
+	defs.h        lists.h       semaphores.h  system_p.h	yyfudge.c	allocate.h  \
+	error.h       macros.h      sio.h         system_t.h	bvf.h	modops.h garbage.h  \
+	format.h      modboot.h     slots.h       table.h	threads.h iset.h sockets.h  \
+	interpret.h   bytecodes.h
+
+COSOURCES = ${MACHINEABBREV}-switch.s threads.c 
+
+COOBJECTS = ${MACHINEABBREV}-switch.o threads.o
+
+DISTRIBCO = sun3-switch.s sun4-switch.s ard-switch.s clip-switch.s any-switch.s i860-switch.s \
+	    386-switch.s Makefile 
+
+KERNELLISP= defs.em extras0.em initcode.em macros0.em standard0.em sockets.em semaphores.em bitvecs.em
+
+
+# Lisp object file
+
+LISPOBJECTS = LispSrc/all-lisp.o
+
+ISOURCES = interpret.c
+IHDRS = bytecodes.h interpret.h
+IOBJECTS = interp.o
+# Lisp object file
+
+LISPOBJECTS = LispSrc/all-lisp.o
+
+#you:	${OBJECTS} ${COOBJECTS} ${READEROBJECTS} ${ELVIRAOBJECTS} ${IOBJECTS}
+#	-touch you
+#	rm you
+#	${CC} -yinitialise_readstr -o you ${OBJECTS} ${COOBJECTS} \
+#		     ${READEROBJECTS} ${IOBJECTS} ${ELVIRAOBJECTS} ${LIBS}
+#	echo 
+
+you:	${OBJECTS} ${COOBJECTS} ${READEROBJECTS} ${ELVIRAOBJECTS} ${IOBJECTS}
+        echo ${OBJS1} > linkfile
+        echo ${OBJS2} >> linkfile
+        echo ${OBJS3} >> linkfile
+        echo ${OBJS4} >> linkfile
+        echo ${OBJS5} >> linkfile
+        echo ${OBJS6} >> linkfile
+        echo ${OBJS7} >> linkfile
+        echo ${READEROBJECTS} >> linkfile
+        echo ${COOBJECTS} >> linkfile
+        echo ${IOBJECTS} >> linkfile
+        echo ${ELVIRAOBJECTS} >> linkfile
+	echo ${LIBS} >> linkfile
+	${CC}  -o you @linkfile
+	echo 
+
+#nelvira:	${OBJECTS} ${COOBJECTS} ${READEROBJECTS} ${IOBJECTS}
+#	ld -r -o feel_elvira.o ${OBJECTS} ${COOBJECTS} ${READEROBJECTS} ${IOBJECTS}
+#	mv feel_elvira.o ../Objs/${ARCH}-elvira.o
+#	echo 
+
+#feel_elvira.o:	elvira
+
+#feel:	feel_elvira.o ${LISPOBJECTS}
+#	(cd LispSrc; make all-lisp.o)
+#	ecc -o feel ${LISPOBJECTS}
+#	echo  
+
+#reader:		
+#	${LEX} comp.lex
+#	${YACC} test.yac
+
+# Sicko bytecode hacking
+# preprocess explicitly, then compile the result, after stripping out
+# cpp control codes. Ugh. Makes debugging easier though.
+#interp.o: interpret.c bytecodes.h interpret.h
+#	gcc -E interpret.c ${FLAGS} \
+#		 -DMACHINE_${MACHINE} \
+#		 -DMODULE_PATH=\"${MODULE_PATH}\" \
+#		 -DLOAD_PATH_NAME=\"${LOAD_PATH_NAME}\" \
+#		 -DSEMAPHORES_${SEMAPHORES} \
+#		 -DMAKE_DATE="\"${DATE}\"" \
+#	> interp.c
+#	${CC} -c ${FLAGS} interp.c
+#
+#.c.o:
+#	${CC} -c $*.c ${FLAGS} \
+#		 -DMACHINE_${MACHINE} \
+#		 -DMODULE_PATH=\"${MODULE_PATH}\" \
+#		 -DLOAD_PATH_NAME=\"${LOAD_PATH_NAME}\" \
+#		 -DSEMAPHORES_${SEMAPHORES} \
+#		 -DMAKE_DATE="\"${DATE}\"" 
+#
+
+interp.o: interpret.c bytecodes.h interpret.h bvf.h iset.h
+	echo -DMACHINE_${MACHINE}                        > compfile
+	echo -DMODULE_PATH=\"${MODULE_PATH}\"           >> compfile
+	echo -DLOAD_PATH_NAME=\"${LOAD_PATH_NAME}\"     >> compfile
+	echo -DSEMAPHORES_${SEMAPHORES}             >> compfile
+	echo -DMAKE_DATE="\"${DATE}\""              >> compfile
+	${CC} -c interpret.c ${FLAGS} @compfile
+	rename interpret.o interp.o
+
+.c.o:
+	echo -DMACHINE_${MACHINE}                        > compfile
+	echo -DMODULE_PATH=\"${MODULE_PATH}\"           >> compfile
+	echo -DLOAD_PATH_NAME=\"${LOAD_PATH_NAME}\"     >> compfile
+	echo -DSEMAPHORES_${SEMAPHORES}             >> compfile
+	echo -DMAKE_DATE="\"${DATE}\""              >> compfile
+	${CC} -c ${FLAGS} $*.c @compfile
+
+
+version: ${SOURCES} ${COSOURCES} ${READERSOURCES} ${ELVIRASOURCES} ${DISTRIBCO} ${HDRS} ${KERNELLISP}
+	rcsfreeze 
+
+tar: ${SOURCES} ${COSOURCES} ${READERSOURCES} ${ELVIRASOURCES} ${DISTRIBCO} \
+	${HDRS} ${KERNELLISP} ${ISOURCES} ${IHDRS}
+	tar chf -  ${SOURCES} ${COSOURCES} ${READERSOURCES} ${ELVIRASOURCES} \
+	           ${DISTRIBCO} ${HDRS} ${KERNELLISP} ${ISOURCES} ${IHDRS} \
+	  | compress > you.tar.Z
+
+# Rather assumes that you have X...
+
+depend: ${SOURCES} ${HDRS} ${READERSOURCES} ${COSOURCES}
+	makedepend -s "# DO NOT DELETE THIS LINE" -- ${FLAGS} -- ${SOURCES} ${COSOURCES} 
+
+clean:
+	rm ${OBJECTS} ${COOBJECTS} ${READEROBJECTS} you
+
+
+${MACHINE}-coroutine.o:	${MACHINE}-coroutine.s
+		${CC} -c ${MACHINE}-coroutine.s
+
+#if there is odd stuff below this line, remove it and do make depend.

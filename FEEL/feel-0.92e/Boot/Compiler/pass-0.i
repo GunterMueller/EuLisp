@@ -1,0 +1,1 @@
+((name pass-0) (dependencies (streams stream list-fns syntx-utl stop pass arith eulisp0 scan-args mod-info props extras0 class-names boot abs-syntx init)) (exported-ids ((address mod-info Module-State-Error) (name . Module-State-Error) (mutable ()) (class . unknown)) ((address pass-0 annotate-tree) (name . annotate-tree) (mutable ()) (class . bytefunction) (argtype (() . 1)))))

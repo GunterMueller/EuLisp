@@ -1,0 +1,29 @@
+Known bugs in feel0-92 
+
+o memory fault in garbage collector when running big tasks with bytecode
+  interpreter -- information leading to its capture would be greatly
+  appreciated
+
+o memory fault when processing -do command-line option (undocumented)
+
+o substring errors if path variables defined with no value
+
+o pvm and pvm3 modules probably don't work with SYSV configuration
+
+o the SYSV configuration hasn't been tested recently (not strictly
+  speaking a bug, but an indication that there probably are some
+  in there somewhere...)
+
+o the memory management system allocates twice the size of heap
+  requested on the grounds that the gc is a two-space collector;
+  this is not necessarily wrong, but is misleading
+
+o occasional 'class-precedence' errors -- information leading to
+  their capture would be much appreciated
+
+o generics don't handle rest lists (fixed in next version)
+
+
+
+
+

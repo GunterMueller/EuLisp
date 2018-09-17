@@ -1,0 +1,47 @@
+#!/bin/sh
+# Script to drive the compiler
+# $Id: ecc.ard,v 1.1 1994/03/16 12:29:03 djb Exp $
+# $Log: ecc.ard,v $
+# Revision 1.1  1994/03/16  12:29:03  djb
+# Initial revision
+#
+# Revision 1.2  90/11/29  21:44:05  is
+# Changed brad_export to denton_export
+# 
+# Revision 1.1  90/11/29  21:39:57  is
+# Script to drive the Eulisp compiler
+# 
+# CC_CPP=/usr/local/lib/gcpp
+# export CC_CPP
+#
+
+
+ARDENT_LD=${FEELDIR}/bin/ldn
+TMPDIR=/net/brad/denton_export/tmp
+
+export ARDENT_LD TMPDIR
+
+# The following is for the benifit of ldn, so it knows where to look
+# for the headers
+ElviraHdrs=-I${FEELDIR}/Src
+export ElviraHdrs
+
+all="$*"
+defines=""
+junk=""
+
+while [ $# -gt 0 ]
+do
+	case "$1" in
+	-D*)
+		defines="$defines $1";;
+	*)
+		junk="$junk $1";;
+	esac
+	shift
+done
+export defines
+set -x
+
+cc ${ElviraHdrs} $all ${ELVIRA} -lm
+ 

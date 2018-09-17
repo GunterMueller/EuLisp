@@ -1,0 +1,11 @@
+((dependencies)
+ (exported-ids 
+   ((name . |symbolp|) (address |symbols| |symbolp|) (class . function) (argtype . 1) (position 0))
+   ((name . |make-symbol|) (address |symbols| |make-symbol|) (class . function) (argtype . 1) (position 1))
+   ((name . |symbol-name|) (address |symbols| |symbol-name|) (class . function) (argtype . 1) (position 2))
+   ((name . |symbol-value|) (address |symbols| |symbol-value|) (class . function) (argtype . 1) (position 3))
+   ((name . |symbol-value-updator|) (address |symbols| |symbol-value-updator|) (class . function) (argtype . 2) (position 4))
+   ((name . |symbol-global|) (address |symbols| |symbol-global|) (class . function) (argtype . 1) (position 5))
+   ((name . |symbol-global-updator|) (address |symbols| |symbol-global-updator|) (class . function) (argtype . 2) (position 6))
+   ((name . |mapoblist|) (address |symbols| |mapoblist|) (class . function) (argtype . 1) (position 7))
+   ((name . |gensym|) (address |symbols| |gensym|) (class . function) (argtype . 0) (position 8))))

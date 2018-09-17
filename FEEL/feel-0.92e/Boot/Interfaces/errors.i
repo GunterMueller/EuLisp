@@ -1,0 +1,11 @@
+((dependencies)
+ (exported-ids 
+   ((name . |<condition-class>|) (address |errors| |<condition-class>|) (class . unknown) (argtype . -1) (position 0))
+   ((name . |<condition>|) (address |errors| |<condition>|) (class . unknown) (argtype . -1) (position 1))
+   ((name . |<Internal-Error>|) (address |errors| |<Internal-Error>|) (class . unknown) (argtype . -1) (position 2))
+   ((name . |<heap-exhausted>|) (address |errors| |<heap-exhausted>|) (class . unknown) (argtype . -1) (position 3))
+   ((name . |<clock-tick>|) (address |errors| |<clock-tick>|) (class . unknown) (argtype . -1) (position 4))
+   ((name . |conditionp|) (address |errors| |conditionp|) (class . function) (argtype . 1) (position 5))
+   ((name . |make-condition|) (address |errors| |make-condition|) (class . function) (argtype . -2) (position 6))
+   ((name . |internal-signal|) (address |errors| |internal-signal|) (class . function) (argtype . 2) (position 7))
+   ((name . |set-print-error-callback|) (address |errors| |set-print-error-callback|) (class . function) (argtype . 1) (position 10))))

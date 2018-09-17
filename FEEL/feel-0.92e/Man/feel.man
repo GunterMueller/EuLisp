@@ -1,0 +1,113 @@
+.TH feel 1L "April, 1994"
+.SH NAME
+feel \- EuLisp interpreter 
+.SH SYNOPSIS
+.B feel 
+[-heap \fIn\fR] [-stack-space \fIn\fR] [-stack-size \fIn\fR] 
+[-boot \fIimage\fR] [-noimage] 
+[-sysv] [-procs \fIn\fR]
+
+.SH DESCRIPTION
+Feel is the reference implementation of the EuLisp language. 
+.LP
+EuLisp is a single-valued dialect of Lisp with the following
+features: 
+.LP
+An integrated object system (Telos) with a defined meta-object
+protocol to enable reflective programming.
+.LP
+A module system.
+.LP
+A simple light-weight process mechanism.
+.LP
+Feel is intended to conform to the EuLisp definition. The present
+version is close in many respects, but there are still numerous minor
+discrepancies.
+
+.SH OPTIONS
+.TP
+.BI "-heap " n
+Size of heap to use (in megabytes if \fIn\fR<50, else bytes). Defaults to 4Mb.
+.TP
+.BI "-stack-space " size
+Amount of storage to allocate for stacks and static data (in megabytes 
+if \fIn\fR<50, else bytes). This defaults to 1 Mb, but should be more for 
+programs that use threads.
+.TP
+.BI "-stack-size " size
+The size of the interpreter thread stack (in kilobytes if \fIn\fR<1000, 
+else bytes). This defaults to 96Kb. It should not be necessary to 
+change this unless your program stops with a 'stack overflowing' message. 
+Beware that an infinite non-tail recursion problem may also trigger this 
+message.
+.TP
+.BI "-boot " image
+Load the bytecode image \fIimage\fR
+.TP
+.BI "-noimage "
+Do not load a bytecode image at all
+.TP
+.BI "-sysv "
+Start Feel in System V configuration (if available)
+.TP
+.BI "-procs " n
+Start up using \fIn\fR processors (works in System V configuration only)
+.PP
+
+.SH GETTING STARTED
+By default the system initially loads the user module, which imports
+eulisp0, and therefore contains most of the usual lisp functions.
+
+(!> \fImymodule\fR) will enter the module \fImymodule\fR, loading it
+if necessary from the file \fImymodule\fR.em.  All bindings in that
+module then become available.
+
+(!>> \fImymodule\fR) is the same as !>, except that it always loads the
+module from disk.
+
+In the error handler:
+.br
+!exit exits the error handler
+.br
+!b gives a backtrace
+.br
+!q gives a quick backtrace
+
+.SH ENVIRONMENT VARIABLES
+.IP FEEL_PATH
+Where Feel is installed -- defaults to ${HOME}/Feel
+.IP FEEL_LOAD_PATH
+Where to find module files (.em) when loading -- defaults to .:${FEEL_PATH}/Boot:${FEEL_PATH}/Modules
+.IP FEEL_BOOT_PATH
+Where to find bytecode image files (.ebc, .est) when booting -- defaults to .:${FEEL_PATH}/Images
+.IP FEEL_START_MODULE
+Which module to load initially -- defaults to user
+
+.LP
+.SH FILES
+.IP ${FEEL_PATH}/bin/feel
+The Feel startup script
+.IP ${FEEL_PATH}/Boot 
+Directory containing kernel modules
+.IP ${FEEL_PATH}/Modules 
+Directory containing startup and example modules
+.IP ${FEEL_PATH}/Images    
+Directory containing bytecode images
+.IP ${HOME}/.feelrc
+User's initial startup file
+.SH SEE ALSO
+.IP feelc
+The Feel bytecode compiler
+.IP ${FEEL_PATH}/Man/feel.dvi
+The Feel manual
+.IP ${FEEL_PATH}/Man/eulisp.dvi
+The EuLisp definition 
+
+.SH AUTHOR
+Peter A Broadbery, plus some others who would prefer to remain
+anonymous, including Keith Playford, Julian Padget, Russell Bradford,
+John ffitch and Duncan Batey.
+
+.SH BUGS
+Almost certainly. Mail to eubug@maths.bath.ac.uk if you find anything
+really nasty.

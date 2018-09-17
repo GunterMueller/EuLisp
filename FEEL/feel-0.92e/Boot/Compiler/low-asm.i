@@ -1,0 +1,1 @@
+((name low-asm) (dependencies (tables telos1 boot init)) (exported-ids))

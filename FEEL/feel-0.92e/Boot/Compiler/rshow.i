@@ -1,0 +1,1 @@
+((name rshow) (dependencies (stream boot class-names strings arith classes standard0 extras0 init)) (exported-ids ((address rshow show) (name . show) (mutable ()) (class . bytefunction) (argtype (() . 1))) ((address rshow rshow) (name . rshow) (mutable ()) (class . bytefunction) (argtype (() . 1)))))

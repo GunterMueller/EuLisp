@@ -1,0 +1,1 @@
+((name iface) (dependencies (syntx-utl syntx-env list-fns class-names init props boot calls stream abs-syntx comp-utl)) (exported-ids ((address iface write-interface-file) (name . write-interface-file) (mutable ()) (class . bytefunction) (argtype (() . 1)))))

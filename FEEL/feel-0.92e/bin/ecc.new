@@ -1,0 +1,25 @@
+#!/bin/sh
+# Script to drive the compiler
+# $Id: ecc.new,v 1.1 1994/03/16 12:29:41 djb Exp $
+# $Log: ecc.new,v $
+# Revision 1.1  1994/03/16  12:29:41  djb
+# Initial revision
+#
+# Revision 1.2  90/11/29  21:44:05  is
+# Changed brad_export to denton_export
+# 
+# Revision 1.1  90/11/29  21:39:57  is
+# Script to drive the Eulisp compiler
+# 
+# CC_CPP=/usr/local/lib/gcpp
+# export CC_CPP
+#
+
+GCC_EXEC_PREFIX=${FEELDIR}/bin/new-gcc-
+export GCC_EXEC_PREFIX
+# The following is for the benifit of ldn, so it knows where to look
+# for the headers
+ElviraHdrs=-I${FEELDIR}/Src
+export ElviraHdrs
+gcc  $* ${ElviraHdrs} ${ELVIRA} -lm
+ 

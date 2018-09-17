@@ -1,0 +1,195 @@
+*** system.c	Tue Feb 11 20:12:41 1992
+--- ../system.c	Tue Mar 24 14:11:30 1992
+***************
+*** 353,360 ****
+--- 353,433 ----
+  int shared_ids[MAX_SHARED_SEGMENTS];
+  int shared_segment_count;
+  
++ #if 1
++ #include <errno.h>
++ #define MAX_SHARED_PAGE_SZ 1024*1024
++ #define PAGE_BOUNDARY 4096
+  char *system_malloc(int n)
+  {
++   char *alloc_memory_block(int size);
++   char *addr=0;
++   int k=0;
++   int left=n;
++ 
++   if (n==0)
++     return NULL;
++ 
++   while (left > MAX_SHARED_PAGE_SZ || addr==0)
++     {
++       if (addr==0)
++ 	addr=alloc_memory_block(MAX_SHARED_PAGE_SZ);
++       else 
++ 	alloc_memory_block(MAX_SHARED_PAGE_SZ);
++       left -=MAX_SHARED_PAGE_SZ;
++     }
++   if (left>0)
++     alloc_memory_block(left);
++   return addr;
++ }
++ 
++ char *alloc_memory_block(int size)
++ {
++   static int id=0;
++   char *addr;
++   int res;
++ 
++   if (id==0)
++     id=25;
++   printf("alloc: %d %d\n",id,size);
++ 
++   if (size==0)
++     return NULL;
++ 
++   if ((size&4095))
++     size=(size+4096)&(~4095);
++ 
++   addr=sbrk(0);
++   if (((int)addr&4095))
++     addr= (char *)(((int)addr+4096)&(~4095));
++ 
++   if (brk(addr+size)==-1)
++     perror("Brk");
++   printf("allocating: %x,%x\n",addr,size);
++   do
++     {
++       extern volatile int errno;
++       errno=0;
++       id++;
++       res=create_shared_region(id,addr,size,0);
++       if (res<0)
++ 	perror("create");
++     }
++   while (res==-1 && errno==EINVAL);
++ 
++   if (res== -1)
++     perror("create");
++   shared_ids[shared_segment_count] = id;
++ 
++   ++shared_segment_count;  
++   id++;
++   
++   return addr;
++ }
++ 
++ 
++ #else
++ char *system_malloc(int n)
++ {
+    int seg;
+    char *addr;
+  
+***************
+*** 379,385 ****
+  
+    return(addr);
+  }
+! 
+  /* Of static shared bits (assumes serial for now)... */
+  
+  #define STATIC_MALLOC_HUNK_SIZE (4096)
+--- 452,458 ----
+  
+    return(addr);
+  }
+! #endif
+  /* Of static shared bits (assumes serial for now)... */
+  
+  #define STATIC_MALLOC_HUNK_SIZE (4096)
+***************
+*** 499,510 ****
+  
+    fprintf(stderr,"\n\nAborting EuLisp on signal %d... ",sig);
+  
+    for (i=0;i<shared_segment_count;++i) {
+      (void) shmctl(shared_ids[i],IPC_RMID,NULL);
+    }
+! 
+!   (void) semctl(system_semaphore,NULL,IPC_RMID,NULL);
+! 
+    /* Kill of other processes too */
+  
+    for (i=0; i<RUNNING_PROCESSORS(); ++i)
+--- 572,586 ----
+  
+    fprintf(stderr,"\n\nAborting EuLisp on signal %d... ",sig);
+  
++ 
++ #if 1
++   for (i=0; i<shared_segment_count ; i++)
++     delete_shared_region(shared_ids[i]);
++ #else
+    for (i=0;i<shared_segment_count;++i) {
+      (void) shmctl(shared_ids[i],IPC_RMID,NULL);
+    }
+! #endif
+    /* Kill of other processes too */
+  
+    for (i=0; i<RUNNING_PROCESSORS(); ++i)
+***************
+*** 522,535 ****
+  
+  void system_lisp_exit(int n)
+  {
+!   int i;
+! 
+    for (i=0;i<shared_segment_count;++i) {
+      (void) shmctl(shared_ids[i],IPC_RMID,NULL);
+    }
+- 
+    (void) semctl(system_semaphore,NULL,IPC_RMID,NULL);
+  
+    /* Kill of other processes too */
+  
+    for (i=0; i<RUNNING_PROCESSORS(); ++i)
+--- 598,614 ----
+  
+  void system_lisp_exit(int n)
+  {
+!    int i;
+! #if 1
+!   for (i=0; i<shared_segment_count ; i++)
+!     delete_shared_region(shared_ids[i]);
+! #else
+    for (i=0;i<shared_segment_count;++i) {
+      (void) shmctl(shared_ids[i],IPC_RMID,NULL);
+    }
+    (void) semctl(system_semaphore,NULL,IPC_RMID,NULL);
+  
++ #endif
+    /* Kill of other processes too */
+  
+    for (i=0; i<RUNNING_PROCESSORS(); ++i)
+***************
+*** 591,597 ****
+        sigset(KICK_SIGNAL,system_nout);
+        (void) sighold(KICK_SIGNAL);
+  
+!       PROFILE(printf("PVAL:%x\n",PROFILE_TIME(system_local_timer)));
+        fflush(stdout);
+        return(error);
+      }
+--- 670,676 ----
+        sigset(KICK_SIGNAL,system_nout);
+        (void) sighold(KICK_SIGNAL);
+  
+!       /**PROFILE(printf("PVAL:%x\n",PROFILE_TIME(system_local_timer)));**/
+        fflush(stdout);
+        return(error);
+      }
+***************
+*** 609,616 ****
+      if (i != system_scheduler_number)
+        kill(SYSTEM_GLOBAL_ARRAY1_VALUE(system_pids,i),KICK_SIGNAL);
+  }
+- 
+- DEF_PROFILE_TIMER(system_local_timer);
+  
+  void system_register_process(int n)
+  {
+--- 688,693 ----

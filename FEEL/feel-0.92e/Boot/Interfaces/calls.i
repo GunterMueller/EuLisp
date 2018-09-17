@@ -1,0 +1,13 @@
+((dependencies)
+ (exported-ids 
+   ((name . |apply|) (address |calls| |apply|) (class . function) (argtype . -2) (position 0))
+   ((name . |apply-macro|) (address |calls| |apply-macro|) (class . function) (argtype . 2) (position 3))
+   ((name . |macrop|) (address |calls| |macrop|) (class . function) (argtype . 1) (position 4))
+   ((name . |functionp|) (address |calls| |functionp|) (class . function) (argtype . 1) (position 5))
+   ((name . |function-lambda-list|) (address |calls| |function-lambda-list|) (class . function) (argtype . 1) (position 6))
+   ((name . |push-handler|) (address |calls| |push-handler|) (class . function) (argtype . 1) (position 7))
+   ((name . |pop-handler|) (address |calls| |pop-handler|) (class . function) (argtype . 0) (position 8))
+   ((name . |simple-call/cc|) (address |calls| |simple-call/cc|) (class . function) (argtype . 1) (position 9))
+   ((name . |fn-unwind-protect|) (address |calls| |fn-unwind-protect|) (class . function) (argtype . 2) (position 10))
+   ((name . |set-no-function-callback|) (address |calls| |set-no-function-callback|) (class . function) (argtype . 1) (position 11))
+   ((name . |get-backtrace-frame|) (address |calls| |get-backtrace-frame|) (class . function) (argtype . 1) (position 12))))

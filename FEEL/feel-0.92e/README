@@ -1,0 +1,56 @@
+------------------------------------------------------------------------
+Welcome to Feel -- the reference implementation of the EuLisp language. 
+
+Extremely brief intro to EuLisp:
+--------------------------------
+EuLisp is a single-valued dialect of Lisp with the following
+features: 
+
+o An integrated object system (Telos) with a defined meta-object
+  protocol to enable reflective programming.
+
+o A module system.
+
+o A simple light-weight process mechanism.
+
+Feel is intended to conform to the EuLisp definition. The present
+version is close in many respects, but there are still numerous minor
+discrepancies.
+
+Read the EuLisp definition and the Feel manual for more details.
+
+------------------------------------------------------------------------
+
+Basic Distribution: ftp.bath.ac.uk: /pub/eulisp/feel-0.92.tgz
+
+ Includes Feel binaries for Sun4, SGI (Irix), and Stardent Titan,
+ and all sources needed to build Feel for your own machine(s).
+
+ Either set the shell variable FEEL_PATH to the directory where you
+ have installed FEEL, or make a symbolic link called 'Feel' in your
+ home directory to the installation.
+
+ The script 'feel' in the distribution bin directory should then set
+ up all the right paths, etc., and execute the appropriate binary --
+ make a link to this script from a directory in your path, or put the
+ bin directory into your path.  The 'feel' shell script automatically
+ boots the system with a bytecoded image.  If you wish to byte-compile
+ your own modules, use the 'feelc' shell script in a similar way --
+ see the Feel manual for details.
+
+ In the Src directory is everything needed to build Feel for your
+ machine.  After changing some variables, and selecting a configuration
+ in the Makefile, you should be able to type 'make install', and get a
+ working system. Read the Makefile and the Feel manual for the options
+ that may need changing for your system. You may need to do a 'make
+ depend' to get the dependencies right although this is not absolutely
+ necessary.
+
+ NB. flex-2.4.6 is now a prerequisite for building Feel from scratch.
+
+ NB. The binaries provided include pvm and pvm3 user libraries (see
+ documentation on the PVM module in the Feel manual), and the Makefile
+ will also by default try to link local pvm and pvm3 libraries into any
+ new Feel binaries.
+
+

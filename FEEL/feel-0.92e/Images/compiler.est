@@ -1,0 +1,1600 @@
+1599
+()
+3
+boot
+(defun mapcan (f l) (if (consp l) (nconc (f (car l)) (mapcan f (cdr l))) nil))
+%_*unbound*_%
+0
+"{"
+strip
+"}"
+import
+union
+except
+rename
+only
+(cons car cdr set-car set-cdr cadr cddr vector-ref set-vector-ref consp null atom eq list assq memq scanq identity bf-setter bf-setter-setter call-method-by-list %do-apply primitive-slot-ref-0 primitive-slot-ref-1 primitive-slot-ref-2 primitive-slot-ref-3 primitive-slot-ref-4 primitive-slot-ref-5 primitive-slot-ref-6 primitive-slot-ref-7 primitive-slot-ref-8 primitive-slot-ref-9 primitive-set-slot-ref-0 primitive-set-slot-ref-1 primitive-set-slot-ref-2 primitive-set-slot-ref-3 primitive-set-slot-ref-4 primitive-set-slot-ref-5 primitive-set-slot-ref-6 primitive-set-slot-ref-7 primitive-set-slot-ref-8 primitive-set-slot-ref-9 fold mapcar1 mapc1 member-list append nconc mapcan not unbound-slot-value scan-args *mod-loc-list* make-installed-module all-registered-modules make-interface find-imports find-module-exports install-local-bindings)
+((union (import module-operators) (import bci) (import streams) (import macros0) (only (symbol-name) (union (import symbols)))) %do-apply call-method-by-list bf-setter identity memq assq list eq atom null consp set-vector-ref vector-ref cddr cadr set-cdr set-car cdr car cons primitive-slot-ref-9 primitive-slot-ref-8 primitive-slot-ref-7 primitive-slot-ref-6 primitive-slot-ref-5 primitive-slot-ref-4 primitive-slot-ref-3 primitive-slot-ref-2 primitive-slot-ref-1 primitive-slot-ref-0 primitive-set-slot-ref-9 primitive-set-slot-ref-8 primitive-set-slot-ref-7 primitive-set-slot-ref-6 primitive-set-slot-ref-5 primitive-set-slot-ref-4 primitive-set-slot-ref-3 primitive-set-slot-ref-2 primitive-set-slot-ref-1 primitive-set-slot-ref-0 bf-setter-setter scan-args not nconc append member-list mapc1 mapcar1 fold install-local-bindings make-interface make-installed-module all-registered-modules)
+164
+37
+13
+init
+<object>
+<class>
+10
+(direct-superclasses direct-slot-descriptions direct-initargs name)
+<instantiable-class>
+(direct-superclasses direct-slot-descriptions direct-initargs name)
+<si-class>
+(direct-superclasses direct-slot-descriptions direct-initargs name)
+<abstract-class>
+(direct-superclasses direct-slot-descriptions direct-initargs name)
+<structure-class>
+(direct-superclasses direct-slot-descriptions direct-initargs name)
+<mi-class>
+(direct-superclasses direct-slot-descriptions direct-initargs name)
+<slot-description-class>
+(direct-superclasses direct-slot-descriptions direct-initargs name)
+<structure>
+<slot-description>
+6
+(name position initfunction reader writer initarg)
+<local-slot-description>
+(name position initfunction reader writer initarg)
+<unreadable-slot-description>
+(name position initfunction reader writer initarg)
+<funcallable-object-class>
+(direct-superclasses direct-slot-descriptions direct-initargs name)
+<generic-class>
+(direct-superclasses direct-slot-descriptions direct-initargs name)
+<bytefunction-class>
+(direct-superclasses direct-slot-descriptions direct-initargs name)
+<funcallable-object>
+<function>
+5
+<i-function>
+<c-function>
+<bytefunction>
+<extended-bytefunction>
+<generic-function>
+(method-class methods domain)
+<method-class>
+(direct-superclasses direct-slot-descriptions direct-initargs name)
+<method>
+(domain range function signature)
+<condition-class>
+(direct-superclasses direct-slot-descriptions direct-initargs name)
+<condition>
+2
+(message error-value)
+<Internal-Error>
+(message error-value)
+<clock-tick>
+(message error-value)
+<invalid-operator>
+4
+(message error-value)
+<thread-class>
+(direct-superclasses direct-slot-descriptions direct-initargs name)
+<thread>
+7
+<primitive-class>
+(direct-superclasses direct-slot-descriptions direct-initargs name)
+<character>
+<symbol>
+<weak-wrapper>
+<continuation>
+<socket>
+<listener>
+<collection>
+<table>
+<sequence>
+<string>
+<vector-class>
+(direct-superclasses direct-slot-descriptions direct-initargs name)
+<vector>
+<number-class>
+(direct-superclasses direct-slot-descriptions direct-initargs name)
+<number>
+<float>
+<double-float>
+<integer>
+<fixint>
+<list>
+<cons>
+<null>
+<special-method>
+1
+(id)
+"Can't happen"
+#\<
+"Missing init-argument"
+error-value
+"No applicable method"
+sig
+name
+argtype
+domain
+signature
+function
+fixed
+position
+owner-class
+anonymous
+"-"
+class
+"Can't read slot"
+"-"
+"-setter"
+"Can't set slot"
+"Could not find slot"
+instance-size
+super-classes
+subclasses
+local-slot-descriptions
+slot-descriptions
+non-local-descriptions
+precedence
+initargs
+8
+spare
+9
+initarg
+initfunction
+slot-writer
+writer
+slot-reader
+reader
+env
+xxx
+home
+body
+offset
+nargs
+globals
+setter
+info
+discriminator
+fast-cache
+slow-cache
+method-table
+method-description
+method-lookup-function
+discrimination-depth
+method-qualifier
+generic-function
+message
+args
+op
+data
+state
+fun
+value
+cochain
+signal-list
+table-values
+table-population
+table-threshold
+14
+table-filled
+table-comparator
+comparator
+table-hash-function
+hash-function
+table-fill
+fill
+id
+setter-setter
+"add-method: argument mismatch"
+"yowzer"
+"No applicable methods"
+"Add-method: outside domain"
+lambda-list
+(object lst)
+add-method
+(object lst)
+compute-method-lookup-function
+(object lst object object)
+compute-discriminating-function
+(x y)
+=
+methods
+method-class
+"No applicable method"
+"Cannot allocate primitive class"
+(x)
+copy
+(x)
+generic-hash
+99
+"Setter: no setter for function"
+"Bad setter"
+"apply: last arg must be a list"
+"apply: arg must be a list"
+(<instantiable-class> <si-class> <abstract-class> <structure-class> <mi-class> <slot-description-class> <structure> <slot-description> <local-slot-description> <unreadable-slot-description> <funcallable-object> <invalid-operator> <collection> <sequence> <vector-class> <number-class> <float> <integer> <list> <special-method> class-type unbound-slot-value fold symbol-unbraced-name default-argument null-argument unbound-argument required-argument class-instance-size class-name class-direct-superclasses class-direct-subclasses class-local-slot-descriptions class-slot-descriptions class-non-local-slot-descriptions class-precedence-list class-initargs class-spare slot-description-name slot-description-position slot-description-initarg slot-description-initfunction slot-description-slot-writer slot-description-slot-reader function-name function-home i-function-body bytefunction-env bytefunction-offset bytefunction-nargs bytefunction-globals bytefunction-setter extended-bytefunction-info generic-name generic-discriminator generic-argtype generic-fast-cache generic-slow-cache generic-method-table generic-method-description generic-method-lookup-function generic-discrimination-depth generic-setter method-qualifier method-signature method-generic-function method-function method-fixed condition-message condition-error-value invalid-operator-args invalid-operator-op thread-internal-state thread-args thread-cochain thread-signals table-values table-population table-threshold table-filled table-comparator table-hash-function table-fill sm-id setter setter-setter generic-method-domain generic-method-class add-method-method make add-method compute-method-lookup-function compute-discriminating-function = set-no-applicable-method copy generic-hash cerror error apply mapc mapcar)
+((strip (union (import arith) (import bci) (except (car cdr cons list append nconc memq null consp mapcar mapc atom) (union (import lists))) (only (class-of set-type set-class-of allocate-object subclassp make-structure-reader make-structure-writer initialize-local-slots allocate initialize primitive-slot-ref primitive-set-slot-ref) (union (import classes))) (import sockets) (import streams) (except (eq) (union (import ccc))) (import symbols) (import strings) (except (atom) (union (import others))) (except (apply) (union (import calls))) (import tables) (except (vector-ref) (union (import vectors))) (except (error cerror) (union (import errors))) (only (set-compute-and-apply-fn generic-function-p methodp) (union (import generics))) (import class-names) (import boot))) binary+ binary- binary* binary/ binary-lcm binary-gcd binary< negate binary+_Integer binary-_Integer binary*_Integer binary/_Integer binary=_Integer binary<_Integer negate-integer binary+_Float binary-_Float binary*_Float binary/_Float binary=_Float binary<_Float negate-float binary-lcm-integer binary-gcd-integer quotient-integer remainder-integer modulo-integer sin-float cos-float tan-float asin-float acos-float atan-float log-float log10-float sqrt-float exp-float sinh-float cosh-float tanh-float asinh-float acosh-float atanh-float pow-float-float pow-integer-float pow-float-integer pow-integer-integer convert-integer-float round-float ceiling-float floor-float + - * / gcd lcm < <= > >= c-rand c-srand pi most-positive-double-float least-positive-double-float least-negative-double-float most-negative-double-float most-positive-fixed-precision-integer most-negative-fixed-precision-integer <bytefunction-class> <bytefunction> <extended-bytefunction> add-code-vector load-bytecodes set-module-statics boot-module-list byte-counts get-bci-codepos set-bc-global list-length copy-list last-pair nreverse assoc member-list consn initialize allocate subclassp class-of set-class-of set-type allocate-object primitive-slot-ref primitive-set-slot-ref make-structure-reader make-structure-writer initialize-local-slots socketp make-listener make-socket listener-id listen connect close-listener close-socket socket-write socket-write-string socket-read socket-read-char socket-unread-char socket-readable-p socket-writable-p listener-listenable-p <listener> <socket> *sockets-available* *eof* generic-prin generic-write output flush generic-read std-streams fopen fpopen freopen fseek ftell fflush fclose fput print-fixnum print-list prin-object std-formatters internal-format b-formatter o-formatter x-formatter r-formatter e-formatter f-formatter g-formatter u-formatter read fread fread-line fread-char fungetc escaped-id-p c_write c_read input_available xpipe_select |generic_equal,Cons,Cons| |generic_equal,Object,Object| |generic_equal,Vector,Vector| |generic_equal,Basic_Structure,Basic_Structure| |generic_equal,Standard_Class,Standard_Class| equal |generic_copy,Object| |generic_copy,Vector| |generic_copy,Basic_Structure| |generic_generic_convert,Cons,Vector| |generic_generic_convert,Vector,Cons| symbolp make-symbol symbol-name symbol-value symbol-value-updator symbol-global symbol-global-updator mapoblist explode gensym make-string stringp string-length string-ref string-ref-updator i-string-ref i-string-ref-updator string-copy string-to-list string-equal string-lt string-gt substring string-append string-<= string->= c-setter c-setter-setter special-operator-p symbol-dynamic-value system getenv exit make-map system-time process-id backtrace cpu-time wall-time system-print make-weak-wrapper weak-wrapper-ref |(setter weak-wrapper-ref)| set-post-gc-callback cpu-times GC quasiquote apply-macro macrop functionp function-lambda-list push-handler pop-handler simple-call/cc fn-unwind-protect set-no-function-callback get-backtrace-frame symbol-hash make-table table-parameters sys-table-ref standard-hash-function set-standard-tab-functions table-delete vectorp make-vector vector-length vector-ref-updator make-initialized-vector convert-vector-list maximum-vector-index make-primitive-object primitive-ref set-primitive-ref <condition-class> <condition> <Internal-Error> <heap-exhausted> <clock-tick> conditionp make-condition internal-signal set-print-error-callback generic-function-p methodp set-compute-and-apply-fn <object> <class> <primitive-class> <thread-class> <funcallable-object-class> <method-class> <generic-class> <number> <double-float> <fixint> <symbol> <null> <cons> <character> <string> <thread> <function> <c-function> <i-function> <continuation> <generic-function> <method> <vector> <table> <weak-wrapper> %do-apply call-method-by-list bf-setter identity memq assq list eq atom null consp set-vector-ref vector-ref cddr cadr set-cdr set-car cdr car cons primitive-slot-ref-9 primitive-slot-ref-8 primitive-slot-ref-7 primitive-slot-ref-6 primitive-slot-ref-5 primitive-slot-ref-4 primitive-slot-ref-3 primitive-slot-ref-2 primitive-slot-ref-1 primitive-slot-ref-0 primitive-set-slot-ref-9 primitive-set-slot-ref-8 primitive-set-slot-ref-7 primitive-set-slot-ref-6 primitive-set-slot-ref-5 primitive-set-slot-ref-4 primitive-set-slot-ref-3 primitive-set-slot-ref-2 primitive-set-slot-ref-1 primitive-set-slot-ref-0 bf-setter-setter scan-args not nconc append member-list mapc1 mapcar1 fold install-local-bindings make-interface make-installed-module all-registered-modules <object> <class> <instantiable-class> <si-class> <abstract-class> <structure-class> <mi-class> <slot-description-class> <structure> <slot-description> <local-slot-description> <unreadable-slot-description> <funcallable-object-class> <generic-class> <bytefunction-class> <funcallable-object> <function> <i-function> <c-function> <bytefunction> <extended-bytefunction> <generic-function> <method-class> <method> <condition-class> <condition> <Internal-Error> <clock-tick> <invalid-operator> <thread-class> <thread> <primitive-class> <character> <symbol> <weak-wrapper> <continuation> <socket> <listener> <collection> <table> <sequence> <string> <vector-class> <vector> <number-class> <number> <float> <double-float> <integer> <fixint> <list> <cons> <null> <special-method> class-type unbound-slot-value fold fold symbol-unbraced-name scan-args default-argument null-argument unbound-argument required-argument class-instance-size class-name class-direct-superclasses class-direct-subclasses class-local-slot-descriptions class-slot-descriptions class-non-local-slot-descriptions class-precedence-list class-initargs class-spare slot-description-name slot-description-position slot-description-initarg slot-description-initfunction slot-description-slot-writer slot-description-slot-reader function-name function-home i-function-body bytefunction-env bytefunction-offset bytefunction-nargs bytefunction-globals bytefunction-setter extended-bytefunction-info generic-name generic-discriminator generic-argtype generic-fast-cache generic-slow-cache generic-method-table generic-method-description generic-method-lookup-function generic-discrimination-depth generic-setter method-qualifier method-signature method-generic-function method-function method-fixed condition-message condition-error-value invalid-operator-args invalid-operator-op thread-internal-state thread-args thread-cochain thread-signals table-values table-population table-threshold table-filled table-comparator table-hash-function table-fill sm-id setter setter-setter generic-method-domain generic-method-class add-method-method make add-method compute-method-lookup-function compute-discriminating-function = set-no-applicable-method copy generic-hash cerror error apply mapc mapcar)
+macros0
+progn
+39
+lambda
+***method-status-handle***
+***method-args-handle***
+if
+cond
+or
+labels
+let
+let*
+setq
+and
+@@
+nil
+fn-unwind-protect
+simple-call/cc
+push-handler
+@
+pop-handler
+let/cc
+dynamic-let
+dynamic
+@prog1-handle@
+%Compiler-special
+inline-fn
+%Compiler-special-object
+add-property
+add-callback
+defconstant
+make
+quote
+list
+export
+(*defs-compile-time* compile-time-p compile-time interpret-time method-lambda method-extra-args cond let anonymous-let named-let letvars letforms let* labels labelsvar labelssetq and or when unless unwind-protect let/cc with-handler block return-from catch throw prog1 compile-inline compile-declare compile-add-callback define-simple-generic)
+((union (import init) (import others)) compile-time-p interpret-time compile-time method-lambda unless when or and labels let* let cond with-handler let/cc unwind-protect return-from block throw catch prog1 compile-inline compile-add-callback compile-declare define-simple-generic)
+extras0
+"-converter"
+(a)
+"~a"
+length
+(l)
+eql
+(x y)
+generic-function-methods
+(gf)
+find-method
+(gf sig)
+make-predicate
+(cl)
+"-p"
+(obj)
+"map-table has been superseded by map\n"
+"JAP thinks this function is now redundant, but if you think othewise...\n"
+#(1 87 49 12 176 178 102 166 121 193 6 84 249 230 44 163 14 197 213 181 161 85 218 80 64 239 24 226 236 142 38 200 110 177 104 103 141 253 255 50 77 101 81 18 45 96 31 222 25 107 190 70 86 237 240 34 72 242 20 214 244 227 149 235 97 234 57 22 60 250 82 175 208 5 127 199 111 62 135 248 174 169 211 58 66 154 106 195 245 171 17 187 182 179 0 243 132 56 148 75 128 133 158 100 130 126 91 13 153 246 216 219 119 68 223 78 83 88 201 99 122 11 92 32 136 114 52 10 138 30 48 183 156 35 61 26 143 74 251 94 129 162 63 152 170 7 115 167 241 206 3 150 55 59 151 220 90 53 23 131 125 173 15 238 79 95 89 16 105 137 225 224 217 160 37 123 118 73 2 157 46 116 9 145 134 228 207 212 202 215 69 229 27 188 67 124 168 252 42 4 29 108 21 247 19 205 39 203 233 40 186 147 198 192 155 33 164 191 98 204 165 180 117 76 140 36 210 172 41 54 159 8 185 232 113 196 231 47 146 120 51 65 28 144 254 221 93 189 194 139 112 43 71 109 184 209 1)
+(not cddr cdar cadr caar cdddr cddar cdadr cdaar caddr cadar caadr caaar cddddr cdddar cddadr cddaar cdaddr cdadar cdaadr cdaaar cadddr caddar cadadr cadaar caaddr caadar caaadr caaaar eqcar mkquote assq list-ref reverse-list subst deleteq list-copy convert converter length eql standard-error-stream standard-output-stream standard-input-stream format format-string-stream-class formatter generic-function-methods find-method make-constructor make-predicate table-keys map-table)
+((strip (union (import init) (except (car cdr cadr cddr) (union (import init))) (import macros0) (import characters))) not not not cadr cddr cddr cdar cadr caar cdddr cddar cdadr cdaar caddr cadar caadr caaar cddddr cdddar cddadr cddaar cdaddr cdadar cdaadr cdaaar cadddr caddar cadadr cadaar caaddr caadar caaadr caaaar eqcar mkquote assq assq assq list-ref reverse-list subst deleteq list-copy convert converter length eql standard-error-stream standard-output-stream standard-input-stream format format-string-stream-class formatter generic-function-methods find-method make-constructor make-predicate table-keys map-table)
+defs
+(make <condition-class> (quote name) (quote invalid-slot-options) (quote direct-superclasses) (list <condition>) (quote direct-slot-descriptions) (quasiquote ((name options initargs (options) initform (unquote (lambda () ())) slot-class (unquote local-slot-description)))))
+"slot options not a list"
+options
+initform
+"bad initform"
+"Initform multiply defined"
+slot-class
+"slot-class multiply defined"
+slot-initargs
+"slot initargs multiply defined"
+accessor
+"unknown slot option"
+find-slot-reader
+find-slot-writer
+defun
+apply
+nconc
+"unbalance class ops"
+constructor
+predicate
+defgeneric
+obj
+defmethod
+metaclass-initargs
+direct-superclasses
+(list <structure>)
+direct-slot-descriptions
+metaclass-hypotheses
+metaclass
+direct-initargs
+default-slot-class
+(list <object>)
+x
+*unnamed-lambda*
+method
+generic-method-class
+(call-method-by-list (method-method-list) (method-arg-list))
+(if ***method-status-handle*** (progn (apply call-method-by-list (list ***method-status-handle*** ***method-args-handle***))) (error "No Next Method" <Internal-Error> nil))
+"Next-method-p: not implemented"
+(defstruct defclass defpredicate defaccessor defwriter defreader defgeneric defextmethod defmethod defcondition next-method-p generic-lambda call-next-method)
+((strip (union (import macros0) (except (not) (union (import extras0))) (except (not) (union (import init))))) defstruct defclass defpredicate defaccessor defwriter defreader defgeneric defextmethod defmethod defcondition next-method-p generic-lambda call-next-method)
+size
+(o)
+emptyp
+(o)
+gens
+gf-member
+(v c f)
+gf-do
+(f c cs)
+gf-any
+(f c cs)
+gf-map
+(f c cs)
+accumulate
+(f i c)
+accumulate1
+(f c)
+gf-fill-range
+(mc v start end)
+gf-fill-from
+(mc v where)
+gf-concatenate
+(sequence more-sequences)
+gf-concatenate-as
+(class sequence more-sequences)
+deep-copy
+(x)
+shallow-copy
+(x)
+clone
+(x)
+reverse
+(sequence)
+first
+(sequence)
+second
+(sequence)
+third
+(sequence)
+last
+(sequence)
+sort
+(sequence comparator)
+gf-delete
+(object collection comparator)
+gf-remove
+(object collection comparator)
+element
+(c s)
+(setter element)
+(c s v)
+current-key
+(c s)
+key-sequence
+(c)
+initial-state
+(c)
+next-state
+(c s)
+final-state
+(c)
+previous-state
+(c s)
+current-element
+(c s)
+(setter current-element)
+(c s v)
+copy-state
+(c s)
+gf-find-key
+((c <collection>) f s r)
+(gf-remove remove gf-delete delete sort last third second first reverse clone shallow-copy deep-copy gf-concatenate-as concatenate-as gf-concatenate concatenate gf-fill-from gf-fill-range fill accumulate1 accumulate gf-map map gf-any anyp gf-do do gf-member member emptyp size key-sequence current-key element copy-state current-element previous-state final-state next-state initial-state gf-find-key find-key)
+((strip (union (import init) (import defs) (import extras0) (import macros0))) gf-remove remove gf-delete delete sort last third second first reverse clone shallow-copy deep-copy gf-concatenate-as concatenate-as gf-concatenate concatenate gf-fill-from gf-fill-range fill accumulate1 accumulate gf-map map gf-any anyp gf-do do gf-member member emptyp size key-sequence current-key element copy-state current-element previous-state final-state next-state initial-state gf-find-key find-key)
+numbers
+(a)
+abs
+(a)
+zerop
+(a b)
+lift-numbers
+"Can't lift numbers"
+(<double-float>)
+sin
+(<double-float>)
+cos
+(<double-float>)
+tan
+(<double-float>)
+asin
+(<double-float>)
+acos
+(<double-float>)
+atan
+(<double-float>)
+log
+(<double-float>)
+log10
+(<double-float>)
+sqrt
+(<double-float>)
+exp
+(<double-float>)
+sinh
+(<double-float>)
+cosh
+(<double-float>)
+tanh
+(<double-float>)
+asinh
+(<double-float>)
+acosh
+(<double-float>)
+round
+(<double-float>)
+floor
+(<double-float>)
+ceiling
+(<double-float> <double-float>)
+pow
+(<double-float>)
+floatp
+(<number>)
+numberp
+(<integer>)
+integerp
+(<fixint> <fixint>)
+quotient
+(<fixint> <fixint>)
+remainder
+(<fixint> <fixint>)
+modulo
+(modulo remainder quotient oddp evenp negativep positivep lift lift-numbers zerop abs min max sin cos tan asin acos atan log log10 sqrt exp sinh cosh tanh asinh acosh round floor ceiling pow floatp numberp integerp quotient remainder modulo)
+((strip (union (import extras0) (import macros0) (import init))) = most-negative-fixed-precision-integer most-positive-fixed-precision-integer most-negative-double-float least-negative-double-float least-positive-double-float most-positive-double-float pi modulo remainder quotient oddp evenp negativep positivep lift lift-numbers zerop abs min max sin cos tan asin acos atan log log10 sqrt exp sinh cosh tanh asinh acosh round floor ceiling pow floatp numberp integerp quotient remainder modulo)
+()
+((strip (union (import init) (import extras0) (import macros0) (import gens) (import defs))) <null> null <null>)
+null
+cons
+((strip (union (import gens) (import defs) (import init) (import extras0) (import macros0))) <cons> <cons>)
+vector
+fill-value
+(vector-quick-sort vector)
+((strip (union (import gens) (import defs) (import extras0) (import init) (import macros0))) vector-quick-sort vector)
+50
+((strip (union (import init) (import macros0) (import extras0) (import gens) (import null) (import cons) (import defs) (import vector) (import numbers))) <null> null <null> <cons> <cons>)
+telos1
+""
+local-sd-p
+(x)
+"Incompatible superclasses."
+<anonymous>
+compatible-superclasses-p
+(class list)
+compatible-superclass-p
+(class list)
+"I need some superclasses...~%"
+none-specified
+"Too many superclasses for single-inheritance class"
+compute-precedence-list
+(class list)
+"Circular hierarchy [How did you manage that?]"
+compute-initargs
+(class direct inherited)
+compute-inherited-initargs
+(class list)
+compute-slot-descriptions
+(class direct-sds inherited-sds)
+compute-inherited-slot-descriptions
+(class direct-sds superclasses)
+compute-specialized-slot-description
+(class inherited-sd direct-sd)
+compute-specialized-slot-description-class
+(class inherited-sd direct-sd)
+compute-defined-slot-description
+(class direct-sd)
+compute-defined-slot-description-class
+(class direct-sd)
+parent-sds
+initialize-specialized-slot-description
+((sd <slot-description>) parent-sds)
+metaclass-default-slot-description-class
+(class)
+compute-and-ensure-slot-accessors
+(class list list)
+compute-slot-reader
+(class slot-description)
+(obj)
+"-"
+compute-slot-writer
+(class slot-description)
+(obj val)
+"-"
+"-setter"
+ensure-slot-reader
+(class slot-description <cons> function)
+"Ensure: ~a ~a ~a~%"
+ensure-slot-writer
+(class slot-description <cons> function)
+compute-primitive-reader-using-slot-description
+(slot-description class <cons>)
+compute-primitive-writer-using-slot-description
+(slot-description class <cons>)
+compute-primitive-reader-using-class
+(class slot-description <cons>)
+compute-primitive-writer-using-class
+(class slot-description <cons>)
+add-subclass
+(cl sub)
+"Can't subclass structure with a non-structure"
+"Object not in the list."
+<incompatible-superclasses>
+<telos-cannot-happen>
+<illegal-inheritance-hierarchy>
+<element-not-found>
+<no-applicable-method>
+(sig)
+find-slot-description
+(class name)
+"<null> has no slots. please try again"
+"no slot description"
+<not-yet-implemented>
+<collection-condition>
+<format-error>
+<scan-mismatch>
+<stream-error>
+(find-slot-writer find-slot-reader find-slot-description add-subclass compute-primitive-writer-using-class compute-primitive-reader-using-class compute-primitive-writer-using-slot-description compute-primitive-reader-using-slot-description ensure-slot-writer ensure-slot-reader compute-slot-writer compute-slot-reader compute-and-ensure-slot-accessors metaclass-default-slot-description-class compute-defined-slot-description-class compute-defined-slot-description compute-specialized-slot-description-class compute-specialized-slot-description compute-inherited-slot-descriptions compute-slot-descriptions compute-inherited-initargs compute-initargs compute-precedence-list compatible-superclass-p compatible-superclasses-p <no-applicable-method> <element-not-found> <illegal-inheritance-hierarchy> <telos-cannot-happen> <incompatible-superclasses> <not-yet-implemented> nyi <collection-condition> <scan-mismatch> <format-error> <stream-error>)
+((strip (union (import init) (import defs) (import macros0) (import extras0) (import class-names) (import gens) (import list))) find-method generic-function-methods make generic-method-class slot-description-slot-reader slot-description-slot-writer class-initargs class-precedence-list class-slot-descriptions class-instance-size allocate initialize find-slot-writer find-slot-reader find-slot-description add-subclass compute-primitive-writer-using-class compute-primitive-reader-using-class compute-primitive-writer-using-slot-description compute-primitive-reader-using-slot-description ensure-slot-writer ensure-slot-reader compute-slot-writer compute-slot-reader compute-and-ensure-slot-accessors metaclass-default-slot-description-class compute-defined-slot-description-class compute-defined-slot-description compute-specialized-slot-description-class compute-specialized-slot-description compute-inherited-slot-descriptions compute-slot-descriptions compute-inherited-initargs compute-initargs compute-precedence-list compatible-superclass-p compatible-superclasses-p <no-applicable-method> <element-not-found> <illegal-inheritance-hierarchy> <telos-cannot-happen> <incompatible-superclasses> <not-yet-implemented> nyi <collection-condition> <scan-mismatch> <format-error> <stream-error>)
+((strip (union (import extras0) (import init) (import macros0) (import defs) (import gens))) deep-copy shallow-copy)
+<unexpected-end-of-stream>
+"end of stream"
+stream
+<stream>
+action
+streamp
+(obj)
+<char-file-stream>
+file
+mode
+<pipe-stream>
+close
+(stream)
+stream-position
+(stream)
+(setter stream-position)
+(stream val)
+input
+(stream)
+uninput
+(stream obj)
+read-line
+(stream)
+file-stream-p
+(obj)
+character-stream-p
+(obj)
+eos-action
+"r"
+output
+update
+append
+"a+"
+"a"
+"r+"
+"w"
+"r"
+"r"
+#\newline
+<inappropriate-stream-position>
+"before start of file"
+stream-end
+-1
+"#<~a: ~a>"
+"()"
+"~g"
+"<<EOF>>"
+"#("
+" "
+")"
+"#<~a: ~a>"
+"#<method: ~a (~a)>"
+"{unattached}"
+"#<~a: (lambda ~a~l) @ ~a>"
+" "
+"#<~a: ~a ~a @ ~a>"
+-1
+"#<~a: ~u>"
+"|"
+#\\
+#\|
+"|"
+"#("
+" "
+")"
+"("
+" "
+")"
+" . "
+")"
+((#\^@ . ^@) (#\^a . ^a) (#\^b . ^b) (#\^c . ^c) (#\^d . ^d) (#\^e . ^e) (#\^f . ^f) (#\alert . ^g) (#\backspace . ^h) (#\tab . ^i) (#\newline . ^j) (#\vertical-tab . ^k) (#\formfeed . ^l) (#\return . ^m) (#\^n . ^n) (#\^o . ^o) (#\^p . ^p) (#\^q . ^q) (#\^r . ^r) (#\^s . ^s) (#\^t . ^t) (#\^u . ^u) (#\^v . ^v) (#\^w . ^w) (#\^x . ^x) (#\^y . ^y) (#\^z . ^z) (#\^[ . ^[) (#\^\ . |^\\|) (#\^] . ^]) (#\^^ . ^^) (#\^_ . ^_) (#\tab . tab) (#\space . space) (#\return . return) (#\alert . alert) (#\backspace . backspace) (#\delete . delete) (#\formfeed . formfeed) (#\newline . linefeed) (#\newline . newline) (#\vertical-tab . vertical-tab))
+"#\\"
+-1
+"eof"
+"#\\"
+"x00"
+256
+((#\\ . "\\\\") (#\" . "\\\"") (#\newline . "\\n") (#\alert . "\\a") (#\backspace . "\\b") (#\delete . "\\d") (#\formfeed . "\\f") (#\newline . "\\n") (#\return . "\\r") (#\tab . "\\t") (#\vertical-tab . "\\v"))
+(0 1 2 3 4 5 6 7 8 9 a b c d e f)
+"~s~s"
+16
+"\\x00~a"
+32
+127
+"\\x00~a"
+"\""
+"\""
+"format ~a: insufficient args"
+"format ~s: insufficient args"
+"format ~d: insufficient args"
+"format ~l: insufficient args"
+#\tab
+"format ~c: insufficient args"
+#\a
+#\A
+#\b
+#\B
+#\c
+#\C
+#\d
+#\D
+#\e
+#\E
+#\f
+#\F
+#\g
+#\G
+#\l
+#\L
+#\o
+#\O
+#\r
+#\R
+#\s
+#\S
+#\u
+#\U
+#\t
+#\T
+#\x
+#\X
+#\%
+#\formfeed
+#\&
+#\~
+"stdin"
+"r"
+"stdout"
+"w"
+"stderr"
+"w"
+(#\space #\tab #\newline #\return)
+scan
+(stream s)
+"scan: illegal stream"
+"scan: ~ at end of string"
+"Scan: unknown scan directive"
+"lit: ~s~%"
+""
+"scan: literal mismatch"
+#\0
+-1
+#\.
+-1
+"No digit on stream"
+#\-
+""
+"scan: expected newline"
+"~dr"
+<string-stream>
+content
+""
+"test string '~a'~%"
+(<string-stream> newline write print prin <inappropriate-stream-position> end-of-stream-p popen open character-stream-p file-stream-p read-line uninput input stream-position close <char-file-stream> <stream> streamp <unexpected-end-of-stream> scan)
+((strip (union (import extras0) (import macros0) (import numbers) (import defs) (import telos1) (import init) (import copy))) flush output generic-prin <string-stream> newline write print prin <inappropriate-stream-position> end-of-stream-p popen open character-stream-p file-stream-p read-line uninput input stream-position close <char-file-stream> <stream> streamp <unexpected-end-of-stream> format scan)
+generic-error-printer
+(c1 c2)
+"Trapped ~a ~a!~%"
+"continuable"
+"non-continuable"
+"  ~a: ~a~%"
+error0
+generic-apply
+(fn args)
+"invalid operator"
+print-fn-trace
+(fn env)
+"Entered: ~a~%"
+"  "
+":"
+"Entered: inst of: ~a~%"
+"Entered: ~a Env: ~a~%"
+"Entered: ~aEnv: ~a~%"
+"Entered method chain: ~a~"
+(generic-error-printer !cont generic-apply !B)
+((strip (union (import init) (import extras0) (import macros0) (import defs) (import stream))) generic-error-printer !cont invalid-operator-op invalid-operator-args <invalid-operator> generic-apply !B)
+<thread-condition>
+<wrong-thread-continue>
+<interrupt>
+flags
+(flags)
+thread
+"dealing with: ~a~%"
+"*** threads not supported~%"
+"#<~a: ~u ~a ~a>"
+returned
+"{undetermined}"
+(make-thread thread-signal thread-value thread-reschedule lock-with-signals <interrupt> <wrong-thread-continue> <thread-condition>)
+((strip (union (import defs) (import extras0) (import macros0) (import telos1) (import init) (import stream) (rename ((open-primitive-semaphore lock) (close-primitive-semaphore unlock)) (union (import sems))) (import threads))) threadp set-sig-handler current-thread continuationp feel-machine-type *threads-available* thread-start thread-set-signalled internal-thread-reschedule internal-thread-value internal-thread-suspend |generic_allocate_instance,Thread_Class| initialize-thread kick not-thread-reset *minimum-stack-size* thread-state thread-queue default-thread-stack-size |(setter default-thread-stack-size)| test-reschedule test-gc thread-start current-thread threadp <thread> <thread> make-thread thread-signal thread-value thread-reschedule lock-with-signals <interrupt> <wrong-thread-continue> <thread-condition>)
+<lock>
+real-sem
+lock
+semaphore-p
+(obj)
+(sem)
+unlock
+(sem)
+initialize-lock
+(sem)
+"Wrong class for lock"
+"Wrong class for unlock"
+"Wrong class for initialize-semaphore"
+(initialize-lock unlock lock <lock> make-lock semaphore-p)
+((strip (union (import extras0) (import macros0) (import defs) (import init) (import sems) (import thread) (import telos1))) threadp set-sig-handler current-thread continuationp feel-machine-type *threads-available* thread-start thread-set-signalled internal-thread-reschedule internal-thread-value internal-thread-suspend |generic_allocate_instance,Thread_Class| initialize-thread kick not-thread-reset *minimum-stack-size* thread-state thread-queue default-thread-stack-size |(setter default-thread-stack-size)| test-reschedule test-gc thread-start current-thread threadp <thread> <thread> make-thread thread-signal thread-value thread-reschedule lock-with-signals <interrupt> <wrong-thread-continue> <thread-condition> initialize-lock unlock lock <lock> make-lock semaphore-p)
+tablep
+(x)
+table-ref
+(table key)
+setter-table-ref
+(table key value)
+table
+(setter-table-ref table-ref tablep clear-table)
+((strip (union (import gens) (import init) (import extras0) (import macros0) (import defs))) setter-table-ref table-ref tablep clear-table)
+"abcdefghijklmnopqrstuvwxyz"
+"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+as-lowercase
+(x)
+as-uppercase
+(x)
+character
+"0123456789"
+(as-lowercase as-uppercase)
+((strip (union (import init) (import extras0) (import gens) (import defs) (import macros0) (import table) (import characters))) characterp as-lowercase as-uppercase)
+((strip (union (import init) (import extras0) (import macros0) (import defs) (import gens) (import character))) <string> <string>)
+string
+sequencep
+(x)
+collectionp
+(x)
+"list(character)->string: ~a is not a character"
+collect
+make-result-object
+(obj size)
+#\space
+"Subclass must implement clone"
+"Argument to last has zero size: ~s\n"
+(collectionp sequencep intersection)
+((strip (union (import init) (import extras0) (import macros0) (import defs) (import gens) (import telos1) (import character) (import numbers))) size emptyp do map accumulate accumulate1 fill concatenate collectionp sequencep member reverse anyp intersection element)
+condition
+(signal)
+((strip (union (import init) (import gens) (import macros0) (import extras0) (import thread))) with-handler error cerror condition-message <Internal-Error> conditionp <Internal-Error> signal)
+"car: Not a list"
+eulisp0
+"cdr: Not a list"
+"(setter car): Not a list"
+"(setter cdr): Not a list"
+(cdr car)
+((strip (union (import gens) (rename ((car unchecked-car) (cdr unchecked-cdr)) (union (import init))) (import extras0) (import macros0) (import error0) (import stream) (import telos1) (import defs) (import lock) (import thread) (import wait) (import table) (import character) (import vector) (import string) (import list) (import copy) (import collect) (import condition) (import numbers))) gf-remove remove gf-delete delete sort last third second first reverse clone shallow-copy deep-copy gf-concatenate-as concatenate-as gf-concatenate concatenate gf-fill-from gf-fill-range fill accumulate1 accumulate gf-map map gf-any anyp gf-do do gf-member member emptyp size key-sequence current-key element copy-state current-element previous-state final-state next-state initial-state gf-find-key find-key binary+ binary- binary* binary/ binary-lcm binary-gcd binary< negate binary+_Integer binary-_Integer binary*_Integer binary/_Integer binary=_Integer binary<_Integer negate-integer binary+_Float binary-_Float binary*_Float binary/_Float binary=_Float binary<_Float negate-float binary-lcm-integer binary-gcd-integer quotient-integer remainder-integer modulo-integer sin-float cos-float tan-float asin-float acos-float atan-float log-float log10-float sqrt-float exp-float sinh-float cosh-float tanh-float asinh-float acosh-float atanh-float pow-float-float pow-integer-float pow-float-integer pow-integer-integer convert-integer-float round-float ceiling-float floor-float + - * / gcd lcm < <= > >= c-rand c-srand pi most-positive-double-float least-positive-double-float least-negative-double-float most-negative-double-float most-positive-fixed-precision-integer most-negative-fixed-precision-integer <bytefunction-class> <bytefunction> <extended-bytefunction> add-code-vector load-bytecodes set-module-statics boot-module-list byte-counts get-bci-codepos set-bc-global list-length copy-list last-pair nreverse assoc member-list consn initialize allocate subclassp class-of set-class-of set-type allocate-object primitive-slot-ref primitive-set-slot-ref make-structure-reader make-structure-writer initialize-local-slots socketp make-listener make-socket listener-id listen connect close-listener close-socket socket-write socket-write-string socket-read socket-read-char socket-unread-char socket-readable-p socket-writable-p listener-listenable-p <listener> <socket> *sockets-available* *eof* generic-prin generic-write output flush generic-read std-streams fopen fpopen freopen fseek ftell fflush fclose fput print-fixnum print-list prin-object std-formatters internal-format b-formatter o-formatter x-formatter r-formatter e-formatter f-formatter g-formatter u-formatter read fread fread-line fread-char fungetc escaped-id-p c_write c_read input_available xpipe_select |generic_equal,Cons,Cons| |generic_equal,Object,Object| |generic_equal,Vector,Vector| |generic_equal,Basic_Structure,Basic_Structure| |generic_equal,Standard_Class,Standard_Class| equal |generic_copy,Object| |generic_copy,Vector| |generic_copy,Basic_Structure| |generic_generic_convert,Cons,Vector| |generic_generic_convert,Vector,Cons| symbolp make-symbol symbol-name symbol-value symbol-value-updator symbol-global symbol-global-updator mapoblist explode gensym make-string stringp string-length string-ref string-ref-updator i-string-ref i-string-ref-updator string-copy string-to-list string-equal string-lt string-gt substring string-append string-<= string->= c-setter c-setter-setter special-operator-p symbol-dynamic-value system getenv exit make-map system-time process-id backtrace cpu-time wall-time system-print make-weak-wrapper weak-wrapper-ref |(setter weak-wrapper-ref)| set-post-gc-callback cpu-times GC quasiquote apply-macro macrop functionp function-lambda-list push-handler pop-handler simple-call/cc fn-unwind-protect set-no-function-callback get-backtrace-frame symbol-hash make-table table-parameters sys-table-ref standard-hash-function set-standard-tab-functions table-delete vectorp make-vector vector-length vector-ref-updator make-initialized-vector convert-vector-list maximum-vector-index make-primitive-object primitive-ref set-primitive-ref <condition-class> <condition> <Internal-Error> <heap-exhausted> <clock-tick> conditionp make-condition internal-signal set-print-error-callback generic-function-p methodp set-compute-and-apply-fn <object> <class> <primitive-class> <thread-class> <funcallable-object-class> <method-class> <generic-class> <number> <double-float> <fixint> <symbol> <null> <cons> <character> <string> <thread> <function> <c-function> <i-function> <continuation> <generic-function> <method> <vector> <table> <weak-wrapper> %do-apply call-method-by-list bf-setter identity memq assq list eq atom null consp set-vector-ref vector-ref cddr cadr set-cdr set-car cons primitive-slot-ref-9 primitive-slot-ref-8 primitive-slot-ref-7 primitive-slot-ref-6 primitive-slot-ref-5 primitive-slot-ref-4 primitive-slot-ref-3 primitive-slot-ref-2 primitive-slot-ref-1 primitive-slot-ref-0 primitive-set-slot-ref-9 primitive-set-slot-ref-8 primitive-set-slot-ref-7 primitive-set-slot-ref-6 primitive-set-slot-ref-5 primitive-set-slot-ref-4 primitive-set-slot-ref-3 primitive-set-slot-ref-2 primitive-set-slot-ref-1 primitive-set-slot-ref-0 bf-setter-setter scan-args not nconc append member-list mapc1 mapcar1 fold install-local-bindings make-interface make-installed-module all-registered-modules <object> <class> <instantiable-class> <si-class> <abstract-class> <structure-class> <mi-class> <slot-description-class> <structure> <slot-description> <local-slot-description> <unreadable-slot-description> <funcallable-object-class> <generic-class> <bytefunction-class> <funcallable-object> <function> <i-function> <c-function> <bytefunction> <extended-bytefunction> <generic-function> <method-class> <method> <condition-class> <condition> <Internal-Error> <clock-tick> <invalid-operator> <thread-class> <thread> <primitive-class> <character> <symbol> <weak-wrapper> <continuation> <socket> <listener> <collection> <table> <sequence> <string> <vector-class> <vector> <number-class> <number> <float> <double-float> <integer> <fixint> <list> <cons> <null> <special-method> class-type unbound-slot-value fold fold symbol-unbraced-name scan-args default-argument null-argument unbound-argument required-argument class-instance-size class-name class-direct-superclasses class-direct-subclasses class-local-slot-descriptions class-slot-descriptions class-non-local-slot-descriptions class-precedence-list class-initargs class-spare slot-description-name slot-description-position slot-description-initarg slot-description-initfunction slot-description-slot-writer slot-description-slot-reader function-name function-home i-function-body bytefunction-env bytefunction-offset bytefunction-nargs bytefunction-globals bytefunction-setter extended-bytefunction-info generic-name generic-discriminator generic-argtype generic-fast-cache generic-slow-cache generic-method-table generic-method-description generic-method-lookup-function generic-discrimination-depth generic-setter method-qualifier method-signature method-generic-function method-function method-fixed condition-message condition-error-value invalid-operator-args invalid-operator-op thread-internal-state thread-args thread-cochain thread-signals table-values table-population table-threshold table-filled table-comparator table-hash-function table-fill sm-id setter setter-setter generic-method-domain generic-method-class add-method-method make add-method compute-method-lookup-function compute-discriminating-function = set-no-applicable-method copy generic-hash cerror error apply mapc mapcar not not not cadr cddr cddr cdar cadr caar cdddr cddar cdadr cdaar caddr cadar caadr caaar cddddr cdddar cddadr cddaar cdaddr cdadar cdaadr cdaaar cadddr caddar cadadr cadaar caaddr caadar caaadr caaaar eqcar mkquote assq assq assq list-ref reverse-list subst deleteq list-copy convert converter length eql standard-error-stream standard-output-stream standard-input-stream format format-string-stream-class formatter generic-function-methods find-method make-constructor make-predicate table-keys map-table generic-error-printer !cont invalid-operator-op invalid-operator-args <invalid-operator> generic-apply !B compile-time-p interpret-time compile-time method-lambda unless when or and labels let* let cond with-handler let/cc unwind-protect return-from block throw catch prog1 compile-inline compile-add-callback compile-declare define-simple-generic find-method generic-function-methods make generic-method-class slot-description-slot-reader slot-description-slot-writer class-initargs class-precedence-list class-slot-descriptions class-instance-size allocate initialize find-slot-writer find-slot-reader find-slot-description add-subclass compute-primitive-writer-using-class compute-primitive-reader-using-class compute-primitive-writer-using-slot-description compute-primitive-reader-using-slot-description ensure-slot-writer ensure-slot-reader compute-slot-writer compute-slot-reader compute-and-ensure-slot-accessors metaclass-default-slot-description-class compute-defined-slot-description-class compute-defined-slot-description compute-specialized-slot-description-class compute-specialized-slot-description compute-inherited-slot-descriptions compute-slot-descriptions compute-inherited-initargs compute-initargs compute-precedence-list compatible-superclass-p compatible-superclasses-p <no-applicable-method> <element-not-found> <illegal-inheritance-hierarchy> <telos-cannot-happen> <incompatible-superclasses> <not-yet-implemented> nyi <collection-condition> <scan-mismatch> <format-error> <stream-error> flush output generic-prin <string-stream> newline write print prin <inappropriate-stream-position> end-of-stream-p popen open character-stream-p file-stream-p read-line uninput input stream-position close <char-file-stream> <stream> streamp <unexpected-end-of-stream> format scan defstruct defclass defpredicate defaccessor defwriter defreader defgeneric defextmethod defmethod defcondition next-method-p generic-lambda call-next-method threadp set-sig-handler current-thread continuationp feel-machine-type *threads-available* thread-start thread-set-signalled internal-thread-reschedule internal-thread-value internal-thread-suspend |generic_allocate_instance,Thread_Class| initialize-thread kick not-thread-reset *minimum-stack-size* thread-state thread-queue default-thread-stack-size |(setter default-thread-stack-size)| test-reschedule test-gc thread-start current-thread threadp <thread> <thread> make-thread thread-signal thread-value thread-reschedule lock-with-signals <interrupt> <wrong-thread-continue> <thread-condition> initialize-lock unlock lock <lock> make-lock semaphore-p threadp set-sig-handler current-thread continuationp feel-machine-type *threads-available* thread-start thread-set-signalled internal-thread-reschedule internal-thread-value internal-thread-suspend |generic_allocate_instance,Thread_Class| initialize-thread kick not-thread-reset *minimum-stack-size* thread-state thread-queue default-thread-stack-size |(setter default-thread-stack-size)| test-reschedule test-gc thread-start current-thread threadp <thread> <thread> make-thread thread-signal thread-value thread-reschedule lock-with-signals <interrupt> <wrong-thread-continue> <thread-condition> wait setter-table-ref table-ref tablep clear-table characterp as-lowercase as-uppercase vector-quick-sort vector <string> <string> <null> null <null> <cons> <cons> deep-copy shallow-copy size emptyp do map accumulate accumulate1 fill concatenate collectionp sequencep member reverse anyp intersection element with-handler error cerror condition-message <Internal-Error> conditionp <Internal-Error> signal = most-negative-fixed-precision-integer most-positive-fixed-precision-integer most-negative-double-float least-negative-double-float least-positive-double-float most-positive-double-float pi modulo remainder quotient oddp evenp negativep positivep lift lift-numbers zerop abs min max sin cos tan asin acos atan log log10 sqrt exp sinh cosh tanh asinh acosh round floor ceiling pow floatp numberp integerp quotient remainder modulo cdr car)
+((strip (union (import eulisp0))) gf-remove remove gf-delete delete sort last third second first reverse clone shallow-copy deep-copy gf-concatenate-as concatenate-as gf-concatenate concatenate fill accumulate1 accumulate gf-map map gf-any anyp gf-do do gf-member member emptyp size key-sequence current-key element copy-state current-element previous-state final-state next-state initial-state binary+ binary- binary* binary/ binary-lcm binary-gcd binary< negate binary+_Integer binary-_Integer binary*_Integer binary/_Integer binary=_Integer binary<_Integer negate-integer binary+_Float binary-_Float binary*_Float binary/_Float binary=_Float binary<_Float negate-float binary-lcm-integer binary-gcd-integer quotient-integer remainder-integer modulo-integer sin-float cos-float tan-float asin-float acos-float atan-float log-float log10-float sqrt-float exp-float sinh-float cosh-float tanh-float asinh-float acosh-float atanh-float pow-float-float pow-integer-float pow-float-integer pow-integer-integer convert-integer-float round-float ceiling-float floor-float + - * / gcd lcm < <= > >= c-rand c-srand pi most-positive-double-float least-positive-double-float least-negative-double-float most-negative-double-float most-positive-fixed-precision-integer most-negative-fixed-precision-integer <bytefunction-class> <bytefunction> <extended-bytefunction> add-code-vector load-bytecodes set-module-statics boot-module-list byte-counts get-bci-codepos set-bc-global list-length copy-list last-pair nreverse assoc member-list consn initialize allocate subclassp class-of set-class-of set-type allocate-object primitive-slot-ref primitive-set-slot-ref make-structure-reader make-structure-writer initialize-local-slots socketp make-listener make-socket listener-id listen connect close-listener close-socket socket-write socket-write-string socket-read socket-read-char socket-unread-char socket-readable-p socket-writable-p listener-listenable-p <listener> <socket> *sockets-available* *eof* generic-prin generic-write output flush generic-read std-streams fopen fpopen freopen fseek ftell fflush fclose fput print-fixnum print-list prin-object std-formatters internal-format b-formatter o-formatter x-formatter r-formatter e-formatter f-formatter g-formatter u-formatter read fread fread-line fread-char fungetc escaped-id-p c_write c_read input_available xpipe_select |generic_equal,Cons,Cons| |generic_equal,Object,Object| |generic_equal,Vector,Vector| |generic_equal,Basic_Structure,Basic_Structure| |generic_equal,Standard_Class,Standard_Class| equal |generic_copy,Object| |generic_copy,Vector| |generic_copy,Basic_Structure| |generic_generic_convert,Cons,Vector| |generic_generic_convert,Vector,Cons| symbolp make-symbol symbol-name symbol-value symbol-value-updator symbol-global symbol-global-updator mapoblist explode gensym make-string stringp string-length string-ref string-ref-updator i-string-ref i-string-ref-updator string-copy string-to-list string-equal string-lt string-gt substring string-append string-<= string->= c-setter c-setter-setter special-operator-p symbol-dynamic-value system getenv exit make-map system-time process-id backtrace cpu-time system-print make-weak-wrapper weak-wrapper-ref |(setter weak-wrapper-ref)| set-post-gc-callback cpu-times GC quasiquote apply-macro macrop functionp function-lambda-list push-handler pop-handler simple-call/cc fn-unwind-protect set-no-function-callback get-backtrace-frame symbol-hash make-table table-parameters sys-table-ref standard-hash-function set-standard-tab-functions vectorp make-vector vector-length vector-ref-updator make-initialized-vector convert-vector-list maximum-vector-index make-primitive-object primitive-ref set-primitive-ref <condition-class> <condition> <Internal-Error> <heap-exhausted> <clock-tick> conditionp make-condition internal-signal set-print-error-callback generic-function-p methodp set-compute-and-apply-fn <object> <class> <primitive-class> <thread-class> <funcallable-object-class> <method-class> <generic-class> <number> <double-float> <fixint> <symbol> <null> <cons> <character> <string> <thread> <function> <c-function> <i-function> <continuation> <generic-function> <method> <vector> <table> <weak-wrapper> %do-apply call-method-by-list bf-setter identity memq assq list eq atom null consp set-vector-ref vector-ref cddr cadr set-cdr set-car cons primitive-slot-ref-9 primitive-slot-ref-8 primitive-slot-ref-7 primitive-slot-ref-6 primitive-slot-ref-5 primitive-slot-ref-4 primitive-slot-ref-3 primitive-slot-ref-2 primitive-slot-ref-1 primitive-slot-ref-0 primitive-set-slot-ref-9 primitive-set-slot-ref-8 primitive-set-slot-ref-7 primitive-set-slot-ref-6 primitive-set-slot-ref-5 primitive-set-slot-ref-4 primitive-set-slot-ref-3 primitive-set-slot-ref-2 primitive-set-slot-ref-1 primitive-set-slot-ref-0 bf-setter-setter scan-args not nconc append member-list mapc1 mapcar1 fold install-local-bindings make-interface make-installed-module all-registered-modules <object> <class> <instantiable-class> <si-class> <abstract-class> <structure-class> <mi-class> <slot-description-class> <structure> <slot-description> <local-slot-description> <unreadable-slot-description> <funcallable-object-class> <generic-class> <bytefunction-class> <funcallable-object> <function> <i-function> <c-function> <bytefunction> <extended-bytefunction> <generic-function> <method-class> <method> <condition-class> <condition> <Internal-Error> <clock-tick> <invalid-operator> <thread-class> <thread> <primitive-class> <character> <symbol> <weak-wrapper> <continuation> <socket> <listener> <collection> <table> <sequence> <string> <vector-class> <vector> <number-class> <number> <float> <double-float> <integer> <fixint> <list> <cons> <null> <special-method> class-type unbound-slot-value fold fold symbol-unbraced-name scan-args default-argument null-argument unbound-argument required-argument class-instance-size class-name class-direct-superclasses class-direct-subclasses class-local-slot-descriptions class-slot-descriptions class-non-local-slot-descriptions class-precedence-list class-initargs class-spare slot-description-name slot-description-position slot-description-initarg slot-description-initfunction slot-description-slot-writer slot-description-slot-reader function-name function-home i-function-body bytefunction-env bytefunction-offset bytefunction-nargs bytefunction-globals bytefunction-setter extended-bytefunction-info generic-name generic-discriminator generic-argtype generic-fast-cache generic-slow-cache generic-method-table generic-method-description generic-method-lookup-function generic-discrimination-depth generic-setter method-qualifier method-signature method-generic-function method-function method-fixed condition-message condition-error-value invalid-operator-args invalid-operator-op thread-internal-state thread-args thread-cochain thread-signals table-values table-population table-threshold table-filled table-comparator table-hash-function table-fill sm-id setter setter-setter generic-method-domain generic-method-class add-method-method make add-method compute-method-lookup-function compute-discriminating-function = set-no-applicable-method copy generic-hash cerror error apply mapc mapcar not not not cadr cddr cddr cdar cadr caar cdddr cddar cdadr cdaar caddr cadar caadr caaar cddddr cdddar cddadr cddaar cdaddr cdadar cdaadr cdaaar cadddr caddar cadadr cadaar caaddr caadar caaadr caaaar eqcar mkquote assq assq assq list-ref reverse-list subst deleteq list-copy convert converter length eql standard-error-stream standard-output-stream standard-input-stream format format-string-stream-class formatter generic-function-methods find-method make-constructor make-predicate table-keys map-table generic-error-printer !cont invalid-operator-op invalid-operator-args <invalid-operator> generic-apply !B compile-time-p interpret-time compile-time method-lambda unless when or and labels let* let cond with-handler let/cc unwind-protect return-from block throw catch prog1 compile-inline compile-add-callback compile-declare define-simple-generic find-method generic-function-methods make generic-method-class slot-description-slot-reader slot-description-slot-writer class-initargs class-precedence-list class-slot-descriptions class-instance-size allocate initialize find-slot-writer find-slot-reader find-slot-description add-subclass compute-primitive-writer-using-class compute-primitive-reader-using-class compute-primitive-writer-using-slot-description compute-primitive-reader-using-slot-description ensure-slot-writer ensure-slot-reader compute-slot-writer compute-slot-reader compute-and-ensure-slot-accessors metaclass-default-slot-description-class compute-defined-slot-description-class compute-defined-slot-description compute-specialized-slot-description-class compute-specialized-slot-description compute-inherited-slot-descriptions compute-slot-descriptions compute-inherited-initargs compute-initargs compute-precedence-list compatible-superclass-p compatible-superclasses-p <no-applicable-method> <element-not-found> <illegal-inheritance-hierarchy> <telos-cannot-happen> <incompatible-superclasses> <not-yet-implemented> nyi <collection-condition> <scan-mismatch> <format-error> <stream-error> flush output generic-prin <string-stream> newline write print prin <inappropriate-stream-position> end-of-stream-p popen open character-stream-p file-stream-p read-line uninput input stream-position close <char-file-stream> <stream> streamp <unexpected-end-of-stream> format scan defstruct defclass defpredicate defaccessor defwriter defreader defgeneric defextmethod defmethod defcondition next-method-p generic-lambda call-next-method threadp set-sig-handler current-thread continuationp feel-machine-type *threads-available* thread-start thread-set-signalled internal-thread-reschedule internal-thread-value internal-thread-suspend |generic_allocate_instance,Thread_Class| initialize-thread kick not-thread-reset *minimum-stack-size* thread-state thread-queue default-thread-stack-size |(setter default-thread-stack-size)| test-reschedule test-gc thread-start current-thread threadp <thread> <thread> make-thread thread-signal thread-value thread-reschedule lock-with-signals <interrupt> <wrong-thread-continue> <thread-condition> initialize-lock unlock lock <lock> make-lock semaphore-p threadp set-sig-handler current-thread continuationp feel-machine-type *threads-available* thread-start thread-set-signalled internal-thread-reschedule internal-thread-value internal-thread-suspend |generic_allocate_instance,Thread_Class| initialize-thread kick not-thread-reset *minimum-stack-size* thread-state thread-queue default-thread-stack-size |(setter default-thread-stack-size)| test-reschedule test-gc thread-start current-thread threadp <thread> <thread> make-thread thread-signal thread-value thread-reschedule lock-with-signals <interrupt> <wrong-thread-continue> <thread-condition> setter-table-ref table-ref tablep characterp as-lowercase as-uppercase vector-quick-sort vector <string> <string> <null> null <null> <cons> <cons> deep-copy shallow-copy size emptyp do map accumulate accumulate1 fill concatenate collectionp sequencep member reverse anyp intersection element with-handler error cerror condition-message <Internal-Error> conditionp <Internal-Error> signal = most-negative-fixed-precision-integer most-positive-fixed-precision-integer most-negative-double-float least-negative-double-float least-positive-double-float most-positive-double-float pi modulo remainder quotient oddp evenp negativep positivep lift lift-numbers zerop abs min max sin cos tan asin acos atan log log10 sqrt exp sinh cosh tanh asinh acosh round floor ceiling pow floatp numberp integerp quotient remainder modulo cdr car)
+standard
+standard0
+(class-direct-slot-descriptions slot-value-using-slot-description slot-value slot-description-initargs generic-function-method-class initialize-instance allocate-instance make-instance pair)
+((strip (union (import standard))) gf-remove remove gf-delete delete sort last third second first reverse clone shallow-copy deep-copy gf-concatenate-as concatenate-as gf-concatenate concatenate fill accumulate1 accumulate gf-map map gf-any anyp gf-do do gf-member member emptyp size key-sequence current-key element copy-state current-element previous-state final-state next-state initial-state binary+ binary- binary* binary/ binary-lcm binary-gcd binary< negate binary+_Integer binary-_Integer binary*_Integer binary/_Integer binary=_Integer binary<_Integer negate-integer binary+_Float binary-_Float binary*_Float binary/_Float binary=_Float binary<_Float negate-float binary-lcm-integer binary-gcd-integer quotient-integer remainder-integer modulo-integer sin-float cos-float tan-float asin-float acos-float atan-float log-float log10-float sqrt-float exp-float sinh-float cosh-float tanh-float asinh-float acosh-float atanh-float pow-float-float pow-integer-float pow-float-integer pow-integer-integer convert-integer-float round-float ceiling-float floor-float + - * / gcd lcm < <= > >= c-rand c-srand pi most-positive-double-float least-positive-double-float least-negative-double-float most-negative-double-float most-positive-fixed-precision-integer most-negative-fixed-precision-integer <bytefunction-class> <bytefunction> <extended-bytefunction> add-code-vector load-bytecodes set-module-statics boot-module-list byte-counts get-bci-codepos set-bc-global list-length copy-list last-pair nreverse assoc member-list consn initialize allocate subclassp class-of set-class-of set-type allocate-object primitive-slot-ref primitive-set-slot-ref make-structure-reader make-structure-writer initialize-local-slots socketp make-listener make-socket listener-id listen connect close-listener close-socket socket-write socket-write-string socket-read socket-read-char socket-unread-char socket-readable-p socket-writable-p listener-listenable-p <listener> <socket> *sockets-available* *eof* generic-prin generic-write output flush generic-read std-streams fopen fpopen freopen fseek ftell fflush fclose fput print-fixnum print-list prin-object std-formatters internal-format b-formatter o-formatter x-formatter r-formatter e-formatter f-formatter g-formatter u-formatter read fread fread-line fread-char fungetc escaped-id-p c_write c_read input_available xpipe_select |generic_equal,Cons,Cons| |generic_equal,Object,Object| |generic_equal,Vector,Vector| |generic_equal,Basic_Structure,Basic_Structure| |generic_equal,Standard_Class,Standard_Class| equal |generic_copy,Object| |generic_copy,Vector| |generic_copy,Basic_Structure| |generic_generic_convert,Cons,Vector| |generic_generic_convert,Vector,Cons| symbolp make-symbol symbol-name symbol-value symbol-value-updator symbol-global symbol-global-updator mapoblist explode gensym make-string stringp string-length string-ref string-ref-updator i-string-ref i-string-ref-updator string-copy string-to-list string-equal string-lt string-gt substring string-append string-<= string->= c-setter c-setter-setter special-operator-p symbol-dynamic-value system getenv exit make-map system-time process-id backtrace cpu-time system-print make-weak-wrapper weak-wrapper-ref |(setter weak-wrapper-ref)| set-post-gc-callback cpu-times GC quasiquote apply-macro macrop functionp function-lambda-list push-handler pop-handler simple-call/cc fn-unwind-protect set-no-function-callback get-backtrace-frame symbol-hash make-table table-parameters sys-table-ref standard-hash-function set-standard-tab-functions vectorp make-vector vector-length vector-ref-updator make-initialized-vector convert-vector-list maximum-vector-index make-primitive-object primitive-ref set-primitive-ref <condition-class> <condition> <Internal-Error> <heap-exhausted> <clock-tick> conditionp make-condition internal-signal set-print-error-callback generic-function-p methodp set-compute-and-apply-fn <object> <class> <primitive-class> <thread-class> <funcallable-object-class> <method-class> <generic-class> <number> <double-float> <fixint> <symbol> <null> <cons> <character> <string> <thread> <function> <c-function> <i-function> <continuation> <generic-function> <method> <vector> <table> <weak-wrapper> %do-apply call-method-by-list bf-setter identity memq assq list eq atom null consp set-vector-ref vector-ref cddr cadr set-cdr set-car cons primitive-slot-ref-9 primitive-slot-ref-8 primitive-slot-ref-7 primitive-slot-ref-6 primitive-slot-ref-5 primitive-slot-ref-4 primitive-slot-ref-3 primitive-slot-ref-2 primitive-slot-ref-1 primitive-slot-ref-0 primitive-set-slot-ref-9 primitive-set-slot-ref-8 primitive-set-slot-ref-7 primitive-set-slot-ref-6 primitive-set-slot-ref-5 primitive-set-slot-ref-4 primitive-set-slot-ref-3 primitive-set-slot-ref-2 primitive-set-slot-ref-1 primitive-set-slot-ref-0 bf-setter-setter not nconc append member-list mapc1 mapcar1 install-local-bindings make-interface make-installed-module all-registered-modules <object> <class> <instantiable-class> <si-class> <abstract-class> <structure-class> <mi-class> <slot-description-class> <structure> <slot-description> <local-slot-description> <unreadable-slot-description> <funcallable-object-class> <generic-class> <bytefunction-class> <funcallable-object> <function> <i-function> <c-function> <bytefunction> <extended-bytefunction> <generic-function> <method-class> <method> <condition-class> <condition> <Internal-Error> <clock-tick> <invalid-operator> <thread-class> <thread> <primitive-class> <character> <symbol> <weak-wrapper> <continuation> <socket> <listener> <collection> <table> <sequence> <string> <vector-class> <vector> <number-class> <number> <float> <double-float> <integer> <fixint> <list> <cons> <null> <special-method> class-type unbound-slot-value symbol-unbraced-name default-argument null-argument unbound-argument required-argument class-instance-size class-name class-direct-superclasses class-direct-subclasses class-local-slot-descriptions class-slot-descriptions class-non-local-slot-descriptions class-precedence-list class-initargs class-spare slot-description-name slot-description-position slot-description-initarg slot-description-initfunction slot-description-slot-writer slot-description-slot-reader function-name function-home i-function-body bytefunction-env bytefunction-offset bytefunction-nargs bytefunction-globals bytefunction-setter extended-bytefunction-info generic-name generic-discriminator generic-argtype generic-fast-cache generic-slow-cache generic-method-table generic-method-description generic-method-lookup-function generic-discrimination-depth generic-setter method-qualifier method-signature method-generic-function method-function method-fixed condition-message condition-error-value invalid-operator-args invalid-operator-op thread-internal-state thread-args thread-cochain thread-signals table-values table-population table-threshold table-filled table-comparator table-hash-function table-fill sm-id setter setter-setter generic-method-domain generic-method-class add-method-method make add-method compute-method-lookup-function compute-discriminating-function = set-no-applicable-method copy generic-hash cerror error apply mapc mapcar not not not cadr cddr cddr cdar cadr caar cdddr cddar cdadr cdaar caddr cadar caadr caaar cddddr cdddar cddadr cddaar cdaddr cdadar cdaadr cdaaar cadddr caddar cadadr cadaar caaddr caadar caaadr caaaar eqcar mkquote assq assq assq list-ref reverse-list subst deleteq list-copy convert converter length eql standard-error-stream standard-output-stream standard-input-stream format format-string-stream-class formatter generic-function-methods find-method make-constructor make-predicate table-keys map-table generic-error-printer !cont invalid-operator-op invalid-operator-args <invalid-operator> generic-apply !B compile-time-p interpret-time compile-time method-lambda unless when or and labels let* let cond with-handler let/cc unwind-protect return-from block throw catch prog1 compile-inline compile-add-callback compile-declare define-simple-generic find-method generic-function-methods make generic-method-class slot-description-slot-reader slot-description-slot-writer class-initargs class-precedence-list class-slot-descriptions class-instance-size allocate initialize find-slot-writer find-slot-reader find-slot-description add-subclass compute-primitive-writer-using-class compute-primitive-reader-using-class compute-primitive-writer-using-slot-description compute-primitive-reader-using-slot-description ensure-slot-writer ensure-slot-reader compute-slot-writer compute-slot-reader compute-and-ensure-slot-accessors metaclass-default-slot-description-class compute-defined-slot-description-class compute-defined-slot-description compute-specialized-slot-description-class compute-specialized-slot-description compute-inherited-slot-descriptions compute-slot-descriptions compute-inherited-initargs compute-initargs compute-precedence-list compatible-superclass-p compatible-superclasses-p <no-applicable-method> <element-not-found> <illegal-inheritance-hierarchy> <telos-cannot-happen> <incompatible-superclasses> <not-yet-implemented> nyi <collection-condition> <scan-mismatch> <format-error> <stream-error> flush output generic-prin <string-stream> newline write print prin <inappropriate-stream-position> end-of-stream-p popen open character-stream-p file-stream-p read-line uninput input stream-position close <char-file-stream> <stream> streamp <unexpected-end-of-stream> format scan defstruct defclass defpredicate defaccessor defwriter defreader defgeneric defextmethod defmethod defcondition next-method-p generic-lambda call-next-method threadp set-sig-handler current-thread continuationp feel-machine-type *threads-available* thread-start thread-set-signalled internal-thread-reschedule internal-thread-value internal-thread-suspend |generic_allocate_instance,Thread_Class| initialize-thread kick not-thread-reset *minimum-stack-size* thread-state thread-queue default-thread-stack-size |(setter default-thread-stack-size)| test-reschedule test-gc thread-start current-thread threadp <thread> <thread> make-thread thread-signal thread-value thread-reschedule lock-with-signals <interrupt> <wrong-thread-continue> <thread-condition> initialize-lock unlock lock <lock> make-lock semaphore-p threadp set-sig-handler current-thread continuationp feel-machine-type *threads-available* thread-start thread-set-signalled internal-thread-reschedule internal-thread-value internal-thread-suspend |generic_allocate_instance,Thread_Class| initialize-thread kick not-thread-reset *minimum-stack-size* thread-state thread-queue default-thread-stack-size |(setter default-thread-stack-size)| test-reschedule test-gc thread-start current-thread threadp <thread> <thread> make-thread thread-signal thread-value thread-reschedule lock-with-signals <interrupt> <wrong-thread-continue> <thread-condition> setter-table-ref table-ref tablep characterp as-lowercase as-uppercase vector-quick-sort vector <string> <string> <null> null <null> <cons> <cons> deep-copy shallow-copy size emptyp do map accumulate accumulate1 fill concatenate collectionp sequencep member reverse anyp intersection element with-handler error cerror condition-message <Internal-Error> conditionp <Internal-Error> signal = most-negative-fixed-precision-integer most-positive-fixed-precision-integer most-negative-double-float least-negative-double-float least-positive-double-float most-positive-double-float pi modulo remainder quotient oddp evenp negativep positivep lift lift-numbers zerop abs min max sin cos tan asin acos atan log log10 sqrt exp sinh cosh tanh asinh acosh round floor ceiling pow floatp numberp integerp quotient remainder modulo cdr car class-direct-slot-descriptions slot-value-using-slot-description slot-value slot-description-initargs generic-function-method-class initialize-instance allocate-instance make-instance pair)
+list-fns
+(mapcdr mapcan posnq nthcdr local-var mk-counter mk-finder nth detect collect mapvect fold map-all deleq)
+((strip (union (import standard0))) mapcdr mapcan posnq nthcdr local-var mk-counter mk-finder nth detect collect mapvect fold map-all deleq)
+break
+| do it again |
+when
+while
+(for while)
+((strip (union (import standard0))) for while)
+loops
+(a)
+simple-writer
+(add-writer make-obj-reader)
+((strip (union (import eulisp0) (rename ((make-obj-reader internal-make-reader)) (union (import lreader))))) write-next read-next add-reader add-writer make-obj-reader)
+scan-args
+(fold-initargs map-initargs scan-args)
+((strip (union (except (scan-args) (union (import eulisp0))))) fold-initargs map-initargs scan-args)
+syntax-obj
+properties
+syntactic-object-p
+(obj)
+make-syntactic-properties
+(syntax lst)
+term
+term-p
+(obj)
+leaf-term
+leaf-term-p
+(obj)
+ident-term
+ide
+abs-syntx
+ident-p
+(obj)
+literal-term
+literal-p
+(obj)
+error-term
+error-term-p
+(obj)
+special-term
+obj-data
+condition-term
+test
+t-part
+f-part
+lambda-id
+applic-term
+call-next-method-term
+block-obj
+block-term
+decl
+lambda-term
+id-list
+macro-lambda-term
+extended-lambda-term
+comment
+sequence
+end
+rest
+assignment-term
+var
+decl-p
+(obj)
+abs-definition
+props
+abs-definition-p
+(obj)
+local-definition
+mutable
+definition-p
+(obj)
+module-definition
+module-definition-p
+(obj)
+definition
+and-decl
+decls
+and-decl-p
+(obj)
+rec-decl
+rec-decl-p
+(obj)
+module-block
+import-spec
+imports
+syntax-spec
+syntax
+export-spec
+exports
+body-forms
+module-p
+(obj)
+import-spec-p
+(obj)
+syntax-spec-p
+(obj)
+export-spec-p
+(obj)
+export-directive
+expose-directive
+mod-name
+import-directive
+rename-directive
+name-list
+except-directive
+only-directive
+union-directive
+print-term
+(ob stream)
+print-decl
+(ob stream)
+(syntactic-properties make-syntactic-properties assignment-term sequence lambda-term block-term block-obj applic-term condition-term error-term make-error-term literal-term ident-term term syntax-obj extended-lambda-term extended-lambda-comment extended-lambda-name make-extended-lambda assignment make-sequence macro-lambda-term make-macro-lambda make-lambda make-block make-applic make-cond literal literal-p ident ident-p special-term special-term-objects special-term-data special-term-name mk-special-term mk-special-term2 error-term-p leaf-term leaf-term-p term-p term-id literal-content cond-f-part cond-t-part cond-test lambda-body lambda-ids applic-args applic-fun block-decl block-body sequence-body sequence-end sequence-content assign-body assign-var lambda-id lambda-id-name make-lambda-id call-next-method-term mk-call-next-method-term rec-decl and-decl definition module-definition decl rec-decl-p and-decl-p local-definition definition-p abs-definition abs-definition-p decl-p make-definition defn-mutable-p defn-body add-defn-prop defn-prop-ref defn-properties defn-ide make-module-definition module-definition-p and-decl-decls make-and-decl rec-decl-decl make-rec-decl module-block module-body module-export-spec module-syntax-spec module-import-spec union-directive union-content make-union-directive only-directive only-imports only-name-list make-only-directive except-directive except-imports except-name-list make-except-directive rename-directive rename-imports rename-name-list make-rename-directive import-directive import-directive-name make-import-directive export-directive export-spec-name make-export-directive export-spec syntax-spec-p make-syntax-spex import-spec import-spec-p module-name module-p make-module expose-directive expose-spec-importer make-expose-directive print-term print-decl)
+((strip (union (import standard0) (import list-fns) (import scan-args))) syntactic-properties make-syntactic-properties assignment-term sequence lambda-term block-term block-obj applic-term condition-term error-term make-error-term literal-term ident-term term syntax-obj extended-lambda-term extended-lambda-comment extended-lambda-name make-extended-lambda assignment make-sequence macro-lambda-term make-macro-lambda make-lambda make-block make-applic make-cond literal literal-p ident ident-p special-term special-term-objects special-term-data special-term-name mk-special-term mk-special-term2 error-term-p leaf-term leaf-term-p term-p term-id literal-content cond-f-part cond-t-part cond-test lambda-body lambda-ids applic-args applic-fun block-decl block-body sequence-body sequence-end sequence-content assign-body assign-var lambda-id lambda-id-name make-lambda-id call-next-method-term mk-call-next-method-term rec-decl and-decl definition module-definition decl rec-decl-p and-decl-p local-definition definition-p abs-definition abs-definition-p decl-p make-definition defn-mutable-p defn-body add-defn-prop defn-prop-ref defn-properties defn-ide make-module-definition module-definition-p and-decl-decls make-and-decl rec-decl-decl make-rec-decl module-block module-body module-export-spec module-syntax-spec module-import-spec union-directive union-content make-union-directive only-directive only-imports only-name-list make-only-directive except-directive except-imports except-name-list make-except-directive rename-directive rename-imports rename-name-list make-rename-directive import-directive import-directive-name make-import-directive export-directive export-spec-name make-export-directive export-spec syntax-spec-p make-syntax-spex import-spec import-spec-p module-name module-p make-module expose-directive expose-spec-importer make-expose-directive print-term print-decl)
+read-error
+cannot-open-path
+"."
+comp-utl
+"~a/~a"
+"path-open: cannot open stream for (~a) ~a"
+"~a.i"
+"~a.em"
+"~a.fm"
+"~a.bc"
+"~a.ebc"
+"~a.est"
+"~a.sc"
+("./")
+("./")
+safe-write
+(object stream)
+(path-open make-search-path fast-file-name get-module-stream interface-file-name get-expander sc-file-name encapsulated-static-file-name encapsulated-byte-file-name bytecode-file-name read-object write-object)
+((strip (union (import standard0) (import list-fns) (import module-operators))) path-open make-search-path fast-file-name get-module-stream interface-file-name get-expander sc-file-name encapsulated-static-file-name encapsulated-byte-file-name bytecode-file-name read-object write-object)
+low-seman
+semantic-info
+" ~a: ~a~%"
+(print-props make-semantic-ref semantics-ref)
+((strip (union (import standard0) (import list-fns) (import abs-syntx))) print-props make-semantic-ref semantics-ref)
+"~a-info"
+make-instruction
+bytecode
+make-instance
+instruction
+convert
+add-instruction
+(definstruction)
+((strip (union (import standard0) (import list-fns) (import scan-args))) definstruction)
+i-macros
+stream-p
+(obj)
+end-of-stream-object
+eos-p
+(obj)
+byte-stream
+write-stream
+(stream ob)
+read-stream
+(stream ob)
+write-stream-list
+(stream lst)
+writer-stream
+reader-function
+reader-fn
+"Writer stream cannot be read~%"
+simple-stream
+filter-stream
+filter
+(write-stream-list read-stream write-stream end-of-stream stream-p make-filter-stream make-simple-stream writer-stream make-writer-stream)
+((strip (union (import standard0) (import list-fns))) write-stream-list read-stream write-stream end-of-stream stream-p make-filter-stream make-simple-stream writer-stream make-writer-stream)
+not
+match-instruct
+i
+"Instruct error.."
+peep-macs
+i-arg-ref
+@-info-@
+i-info
+equal
+slot-value
+combine-results
+(cons nil nil)
+next
+instruct
+attributes
+one-of
+do-rules
+(combine-results peephole-matcher preprocess-rules)
+((strip (union (import standard0) (import list-fns))) combine-results peephole-matcher preprocess-rules)
+compile-unit
+statics
+local-count
+byte-codes
+local-names
+comp-defn
+sc-compile-unit
+code
+slots
+nslots
+names
+dependencies
+unit-name
+(x)
+%%-unresolved-%%
+%%-link-me-%%
+%%-big-arg-%%
+%%-me-local--%%
+%%-static-%%
+(unit-name sc-compile-unit sc-dependencies sc-names sc-length sc-nslots sc-code sc-statics compile-unit compile-unit-length compile-unit-exports compile-unit-imports compile-unit-byte-codes compile-unit-local-count compile-unit-name compile-unit-statics make-compile-unit the-static-handle the-local-handle the-link-handle the-long-handle the-unresolved-handle)
+((strip (union (import standard0) (import list-fns) (import comp-utl))) path-open make-search-path fast-file-name get-module-stream interface-file-name get-expander sc-file-name encapsulated-static-file-name encapsulated-byte-file-name bytecode-file-name read-object write-object unit-name sc-compile-unit sc-dependencies sc-names sc-length sc-nslots sc-code sc-statics compile-unit compile-unit-length compile-unit-exports compile-unit-imports compile-unit-byte-codes compile-unit-local-count compile-unit-name compile-unit-statics make-compile-unit the-static-handle the-local-handle the-link-handle the-long-handle the-unresolved-handle)
+instruction-info
+in
+out
+stackop
+branchp
+branch
+sidep
+side
+jumpp
+jump
+nullp
+argwidth
+argtypes
+cost-fn
+cost-lit
+cost
+instruction-p
+(obj)
+%%**%%
+prev
+"$<~a"
+" ~a"
+">"
+label
+link
+static
+"Unknown size"
+lab-id
+installed
+lab-refs
+refs
+(1)
+"#<lab: ~a>"
+inline-code-list
+count
+is-inline-code
+(obj)
+nop
+push-global
+(link)
+push-special
+(1)
+push-static
+(static)
+push-small-fixnum
+(1)
+push-fixnum
+(4)
+set-global
+(static)
+nth-ref
+(1)
+nth-ref-0
+nth-ref-1
+nth-ref-2
+11
+nth-ref-3
+12
+set-nth
+(1)
+i-slide-stack
+arg-1
+arg-2
+(1 1)
+i-slide-stack-1
+15
+(1)
+swap
+drop
+17
+(1)
+drop-1
+18
+env-ref
+19
+(1 1)
+set-env
+20
+(1 1)
+make-env
+22
+(1)
+pop-env
+21
+(1)
+vref
+23
+set-vref
+24
+slot-ref
+25
+(1)
+slot-ref-0
+26
+slot-ref-1
+27
+set-slot
+28
+(1)
+set-slot-1
+29
+i-set-type
+30
+31
+conditional
+(branch)
+branch-nil
+(branch)
+apply-args
+63
+apply-any
+33
+(+ nargs 2)
+(1)
+apply-bvf
+34
+(+ nargs 2)
+(1)
+apply-cfn
+62
+(+ nargs 2)
+(1)
+apply-method-list
+61
+apply-methods
+35
+(+ nargs 2)
+(1)
+push-label
+36
+(branch)
+return
+i-exit
+38
+i-cons
+alloc-closure
+40
+(1)
+alloc-extended-closure
+51
+(1)
+alloc-thing
+42
+eqp
+43
+i-consp
+44
+i-assq
+48
+i-memq
+49
+i-scanq
+current-context
+46
+ensure-stack
+47
+(1)
+i-label
+257
+dead-code
+258
+(instruction-argtypes instruction-nargs instruction-name instruction-bytecode instruction-jumpp instruction-sidep instruction-branchp instruction-out-count instruction-in-count i-cost mk-imaker i-arg-list i-link-data i-arg-ref i-name i-inumber i-nargs i-args i-info instruction-argwidth is-null-op is-static-arg is-link-arg is-branch-arg is-label is-label-arg instruction-label add-lab-ref make-refed-label lab-refs make-label find-instruction inline-code-list inline-code inline-code-count make-inline-code is-inline-code nop-info nop push-global-info push-global push-special-info push-special push-static-info push-static push-small-fixnum-info push-small-fixnum push-fixnum-info push-fixnum set-global-info set-global nth-ref-info nth-ref nth-ref-0-info nth-ref-0 nth-ref-1-info nth-ref-1 nth-ref-2-info nth-ref-2 nth-ref-3-info nth-ref-3 set-nth-info set-nth i-slide-stack-info i-slide-stack i-slide-stack-1-info i-slide-stack-1 swap-info swap drop-info drop drop-1-info drop-1 env-ref-info env-ref set-env-info set-env make-env-info make-env pop-env-info pop-env vref-info vref set-vref-info set-vref slot-ref-info slot-ref slot-ref-0-info slot-ref-0 slot-ref-1-info slot-ref-1 set-slot-info set-slot set-slot-1-info set-slot-1 i-set-type-info i-set-type branch-info branch branch-nil-info branch-nil apply-args-info apply-args apply-any-info apply-any apply-bvf-info apply-bvf apply-cfn-info apply-cfn apply-method-list-info apply-method-list apply-methods-info apply-methods push-label-info push-label return-info return i-exit-info i-exit i-cons-info i-cons alloc-closure-info alloc-closure alloc-extended-closure-info alloc-extended-closure alloc-thing-info alloc-thing nullp-info nullp eqp-info eqp i-consp-info i-consp i-assq-info i-assq i-memq-info i-memq i-scanq-info i-scanq current-context-info current-context ensure-stack-info ensure-stack i-label-info i-label dead-code-info dead-code bc-macro-type)
+((strip (union (import standard0) (import list-fns) (import scan-args) (import i-macros))) instruction-argtypes instruction-nargs instruction-name instruction-bytecode instruction-jumpp instruction-sidep instruction-branchp instruction-out-count instruction-in-count i-cost mk-imaker i-arg-list i-link-data i-arg-ref i-name i-inumber i-nargs i-args i-info instruction-argwidth is-null-op is-static-arg is-link-arg is-branch-arg is-label is-label-arg instruction-label add-lab-ref make-refed-label lab-refs make-label find-instruction inline-code-list inline-code inline-code-count make-inline-code is-inline-code nop-info nop push-global-info push-global push-special-info push-special push-static-info push-static push-small-fixnum-info push-small-fixnum push-fixnum-info push-fixnum set-global-info set-global nth-ref-info nth-ref nth-ref-0-info nth-ref-0 nth-ref-1-info nth-ref-1 nth-ref-2-info nth-ref-2 nth-ref-3-info nth-ref-3 set-nth-info set-nth i-slide-stack-info i-slide-stack i-slide-stack-1-info i-slide-stack-1 swap-info swap drop-info drop drop-1-info drop-1 env-ref-info env-ref set-env-info set-env make-env-info make-env pop-env-info pop-env vref-info vref set-vref-info set-vref slot-ref-info slot-ref slot-ref-0-info slot-ref-0 slot-ref-1-info slot-ref-1 set-slot-info set-slot set-slot-1-info set-slot-1 i-set-type-info i-set-type branch-info branch branch-nil-info branch-nil apply-args-info apply-args apply-any-info apply-any apply-bvf-info apply-bvf apply-cfn-info apply-cfn apply-method-list-info apply-method-list apply-methods-info apply-methods push-label-info push-label return-info return i-exit-info i-exit i-cons-info i-cons alloc-closure-info alloc-closure alloc-extended-closure-info alloc-extended-closure alloc-thing-info alloc-thing nullp-info nullp eqp-info eqp i-consp-info i-consp i-assq-info i-assq i-memq-info i-memq i-scanq-info i-scanq current-context-info current-context ensure-stack-info ensure-stack i-label-info i-label dead-code-info dead-code bc-macro-type)
+enclosing-block
+binding-used
+binding-closed
+binding-mutable
+binding-as-arg
+use-set
+inline-lambda
+lambda-nargs
+lambda-closed-p
+lambda-inhibit-alloc
+tail-call
+term-fn-call-loc
+ident-defblock
+module-declarations
+module-imports
+module-exports
+module-flat-import
+module-name-cache
+module-dependencies
+decl-class
+decl-done-properties
+decl-setter
+compile-time-value
+compile-state
+condition-label
+lambda-tail-label
+real-lambda-env
+lambda-init-label
+binding-posn
+lambda-tidyup
+(module-dependencies module-name-cache module-flat-imports module-exports module-imports module-declarations ident-block ident-decl ident-defblock term-fn-call-loc term-tail-call lambda-inhibit-alloc lambda-closed-p lambda-nargs inline-lambda cached-use-set binding-as-arg binding-mutable binding-closed binding-used enclosing-block decl-done-properties decl-class-uncached condition-label compile-state cached-compile-time-value lambda-tidyup binding-posn lambda-init-label real-lambda-env lambda-tail-call-label decl-setter)
+((strip (union (import standard0) (import list-fns) (import low-seman))) print-props module-dependencies module-name-cache module-flat-imports module-exports module-imports module-declarations ident-block ident-decl ident-defblock term-fn-call-loc term-tail-call lambda-inhibit-alloc lambda-closed-p lambda-nargs inline-lambda cached-use-set binding-as-arg binding-mutable binding-closed binding-used enclosing-block decl-done-properties decl-class-uncached condition-label compile-state cached-compile-time-value lambda-tidyup binding-posn lambda-init-label real-lambda-env lambda-tail-call-label decl-setter)
+import-module
+mod-cache
+".:/net/brad/denton_export/denton/You/NewYou/Interfaces:/net/brad/denton_export/denton/You/Interfaces"
+"FEEL_INTF_PATH"
+#\:
+exported-ids
+"Reading: ~a~%"
+(import-module read-exportations imported-module-props)
+((strip (union (except (fold) (union (import standard))) (import list-fns) (import comp-utl))) import-module get-module-stream read-exportations imported-module-props)
+compiler-pass-function
+pre-functions
+post-functions
+pass
+thang
+subcomponents
+(syntax)
+"** No explicit method: ~a~%"
+(subcomponents post-pass pre-pass add-post-function add-pre-function make-compiler-pass)
+((strip (union (import standard0) (import list-fns) (import abs-syntx))) subcomponents post-pass pre-pass add-post-function add-pre-function make-compiler-pass)
+Compiler-State-Error
+stack
+initstate
+compstate
+"#S<~a>"
+stack-val
+"#<?>"
+"Empty stack in Stack-top"
+"Empty stack in Stack-pop"
+"Value not on stack"
+env-object
+type
+compiler-state
+state-stack
+no-value
+output-stream
+state-stream
+state-statics
+state-code
+"#<state: ~a>"
+(make-stack-val stack-depth stack-ref scanq-stack stack-swap stack-push stack-slide stack-pop stack-top stack make-stack copy-stack env-object-prev env-object-content env-object-size make-env-object static-val-id statics-2-list add-static append-statics make-static-store make-code-list add-code-vectors reify-code-stream state-code state-statics state-stream state-stack make-compiler-state modify-compiler-state update-comp-state add-instruction)
+((strip (union (import standard0) (import list-fns) (import scan-args) (import byte-stream) (import abs-syntx) (import props))) make-stack-val stack-depth stack-ref scanq-stack stack-swap stack-push stack-slide stack-pop stack-top stack make-stack copy-stack env-object-prev env-object-content env-object-size make-env-object static-val-id statics-2-list add-static append-statics make-static-store make-code-list add-code-vectors reify-code-stream state-code state-statics state-stream state-stack make-compiler-state modify-compiler-state update-comp-state add-instruction)
+"Instruct error.."
+(cons nil nil)
+(combine-results peephole-matcher preprocess-rules)
+((strip (union (import standard0) (import list-fns))) combine-results peephole-matcher preprocess-rules)
+"global->local: ~a~%"
+(attributes ((in 0) (out 1) (stackop ()) (sidep ())) the-instruction (next (one-of (instruct drop (n) (test ((> n 0)) (output (drop (- n 1))))) (instruct i-slide-stack (d k) (test ((> d 0) (> k 0)) (output (i-slide-stack (- d 1) (- k 1)) the-instruction))))))
+Yow
+peephole
+(i-label branch branch-nil return)
+(no-rules peep-test peep-test micro-test blocking-instruction-p)
+((strip (union (import standard0) (import list-fns) (import peep-macs) (import instruct) (import comp-defn) (import byte-stream))) no-rules peep-test peep-test micro-test blocking-instruction-p)
+Stop
+stop
+"Stopping..."
+(vals cont stop set-ignore)
+((strip (union (import standard0) (import list-fns))) vals cont stop set-ignore)
+macros
+text
+syntx-env
+imported-definition
+imported-defn-p
+(obj)
+external-name
+(x)
+address
+internal
+some-setter
+macro
+generic-read-imports
+(import-specifier)
+"Env: generic-read-imports: ~a~%"
+"Env: Done ~a~%"
+"Only: ~a ~a~%"
+"Rename: ~a~%"
+"Rename: ~a->~a~%"
+import-text
+(ispec)
+"Import-text: strange-directive"
+flatten-imports
+(ispec)
+"Import-text: strange-directive"
+(module-imports-list module-import-desc imported-definition imported-defn-p external-name import-function-nargs import-defn-setter import-object-type import-real-name import-home compile-macro-expand find-name find-macro expander read-imports flatten-imports module-imported-names module-exported-names)
+((strip (union (except (fold) (union (import standard))) (import list-fns) (import abs-syntx) (import comp-utl) (import mod-cache))) import-module get-module-stream read-exportations imported-module-props syntactic-properties make-syntactic-properties assignment-term sequence lambda-term block-term block-obj applic-term condition-term error-term make-error-term literal-term ident-term term syntax-obj extended-lambda-term extended-lambda-comment extended-lambda-name make-extended-lambda assignment make-sequence macro-lambda-term make-macro-lambda make-lambda make-block make-applic make-cond literal literal-p ident ident-p special-term special-term-objects special-term-data special-term-name mk-special-term mk-special-term2 error-term-p leaf-term leaf-term-p term-p term-id literal-content cond-f-part cond-t-part cond-test lambda-body lambda-ids applic-args applic-fun block-decl block-body sequence-body sequence-end sequence-content assign-body assign-var lambda-id lambda-id-name make-lambda-id call-next-method-term mk-call-next-method-term rec-decl and-decl definition module-definition decl rec-decl-p and-decl-p local-definition definition-p abs-definition abs-definition-p decl-p make-definition defn-mutable-p defn-body add-defn-prop defn-prop-ref defn-properties defn-ide make-module-definition module-definition-p and-decl-decls make-and-decl rec-decl-decl make-rec-decl module-block module-body module-export-spec module-syntax-spec module-import-spec union-directive union-content make-union-directive only-directive only-imports only-name-list make-only-directive except-directive except-imports except-name-list make-except-directive rename-directive rename-imports rename-name-list make-rename-directive import-directive import-directive-name make-import-directive export-directive export-spec-name make-export-directive export-spec syntax-spec-p make-syntax-spex import-spec import-spec-p module-name module-p make-module expose-directive expose-spec-importer make-expose-directive print-term print-decl module-imports-list module-import-desc imported-definition imported-defn-p external-name defn-prop-ref import-function-nargs import-defn-setter import-object-type import-real-name import-home compile-macro-expand find-name find-macro expander read-imports flatten-imports module-imported-names module-exported-names)
+assem
+"Done: ~a instructions~%"
+(reify-code-list)
+((strip (union (except (fold) (union (import standard))) (only (pair) (union (import standard0))) (import list-fns) (import instruct) (import byte-stream) (import comp-defn) (import stop))) reify-code-list)
+no-change
+new
+peep-drv
+(optimize-lst)
+((strip (union (import standard0) (import list-fns) (import byte-stream) (import peephole) (import instruct))) optimize-lst)
+syntx-utl
+get-internal-closed-bindings
+(obj)
+is-real-lambda
+(obj)
+object
+9999
+find-fn
+(x)
+bytefunction
+local
+lexical
+"Inlining ~a~%"
+"Unknown object: ~a~%"
+"dunno"
+((class . unknown) (mutable nil))
+read-defn-properties
+(defn)
+"no way"
+compute-properties
+(defn)
+unknown
+generic-classify
+(body)
+inline
+call-next-method-internal
+special
+compute-compile-time-value
+(x)
+find-setter
+(value)
+no-way
+set-setter-function
+(fn new-setter)
+setter-function
+(find-decls enclosing-lambda get-internal-closed-bindings find-fn function-nary-p function-nargs function-prop function-type function-fn decl-class add-dependency)
+((strip (union (except (fold) (union (import standard))) (import list-fns) (import syntx-env) (import pass) (import props) (import stop))) import-module get-module-stream read-exportations imported-module-props syntactic-properties make-syntactic-properties assignment-term sequence lambda-term block-term block-obj applic-term condition-term error-term make-error-term literal-term ident-term term syntax-obj extended-lambda-term extended-lambda-comment extended-lambda-name make-extended-lambda assignment make-sequence macro-lambda-term make-macro-lambda make-lambda make-block make-applic make-cond literal literal-p ident ident-p special-term special-term-objects special-term-data special-term-name mk-special-term mk-special-term2 error-term-p leaf-term leaf-term-p term-p term-id literal-content cond-f-part cond-t-part cond-test lambda-body lambda-ids applic-args applic-fun block-decl block-body sequence-body sequence-end sequence-content assign-body assign-var lambda-id lambda-id-name make-lambda-id call-next-method-term mk-call-next-method-term rec-decl and-decl definition module-definition decl rec-decl-p and-decl-p local-definition definition-p abs-definition abs-definition-p decl-p make-definition defn-mutable-p defn-body add-defn-prop defn-prop-ref defn-properties defn-ide make-module-definition module-definition-p and-decl-decls make-and-decl rec-decl-decl make-rec-decl module-block module-body module-export-spec module-syntax-spec module-import-spec union-directive union-content make-union-directive only-directive only-imports only-name-list make-only-directive except-directive except-imports except-name-list make-except-directive rename-directive rename-imports rename-name-list make-rename-directive import-directive import-directive-name make-import-directive export-directive export-spec-name make-export-directive export-spec syntax-spec-p make-syntax-spex import-spec import-spec-p module-name module-p make-module expose-directive expose-spec-importer make-expose-directive print-term print-decl module-imports-list module-import-desc imported-definition imported-defn-p external-name defn-prop-ref import-function-nargs import-defn-setter import-object-type import-real-name import-home compile-macro-expand find-name find-macro expander read-imports flatten-imports module-imported-names module-exported-names find-decls enclosing-lambda get-internal-closed-bindings find-fn function-nary-p function-nargs function-prop function-type function-fn decl-class add-dependency)
+generate
+"{Making Env: ~a "
+returning
+(make-new-code-stream do-code-sequence do-allocate-closure do-push-global do-push-static do-push-fixnum do-global-set do-nop do-pop do-apply-any do-apply-cfn do-apply-bvf do-apply-methods do-stack-ref do-set-stack-ref do-alloc do-cons do-car do-cdr do-slot-ref do-setter-slot-ref do-setter-cdr do-vector-ref do-add-comment do-alloc-env do-env-ref do-setter-env-ref do-pop-env do-add-label do-branch do-branch-on-nil do-code-sequence do-push-label do-return do-slide do-swap do-inline-code do-dead-code)
+((strip (union (import standard0) (import list-fns) (import compstate) (import instruct) (import byte-stream))) make-stack-val stack-depth stack-ref scanq-stack stack-swap stack-push stack-slide stack-pop stack-top stack make-stack copy-stack env-object-prev env-object-content env-object-size make-env-object static-val-id statics-2-list add-static append-statics make-static-store make-code-list add-code-vectors reify-code-stream state-code state-statics state-stream state-stack make-compiler-state modify-compiler-state update-comp-state add-instruction make-label make-new-code-stream do-code-sequence do-allocate-closure do-push-global do-push-static do-push-fixnum do-global-set do-nop do-pop do-apply-any do-apply-cfn do-apply-bvf do-apply-methods do-stack-ref do-set-stack-ref do-alloc do-cons do-car do-cdr do-slot-ref do-setter-slot-ref do-setter-cdr do-vector-ref do-add-comment do-alloc-env do-env-ref do-setter-env-ref do-pop-env do-add-label do-branch do-branch-on-nil do-code-sequence do-push-label do-return do-slide do-swap do-inline-code do-dead-code bc-macro-type)
+Module-State-Error
+msg
+""
+values
+(values msg)
+module-info
+definitions
+mod-info
+import-list
+generic-get-mod-ops
+(decl)
+"Thing declared twice"
+"** ~a defined more than once~%"
+make-module-export
+(exporter defns module)
+"Import in module body"
+"(Expose: ~a~%"
+"~a)"
+"'~a'"
+(Module-State-Error set-module-interface module-info-defns module-info-class module-info-imports find-module-import)
+((strip (union (except (fold scan-args) (union (import standard))) (import list-fns) (import scan-args) (import syntx-env) (import pass) (import props))) Module-State-Error set-module-interface module-info-defns module-info-class module-info-imports import-home import-real-name imported-definition find-module-import)
+"~a: ~a\n"
+rshow
+""
+"..."
+generic-rshow
+(ob st)
+"~a ~a:"
+"  "
+(show rshow)
+((strip (union (import standard0))) show rshow)
+"Module: initlist: ~a"
+pass-0
+internal-blocks
+(obj)
+set-enclosing-block
+(obj enclose)
+annotate
+find-method-lambda
+(blck)
+lookup-id
+(object name closed-flag)
+"unknown-binding: ~a "
+"**Unknown binding: ~a~%"
+"("
+"{~a}"
+"-~a-"
+" "
+")"
+"{~a}"
+"-~a-"
+(annotate-tree)
+((strip (union (except (scan-args fold) (union (import standard))) (import list-fns) (import scan-args) (import abs-syntx) (import syntx-utl) (import mod-info) (import props) (import pass) (import stop))) Module-State-Error annotate-tree)
+Syntax-Error
+"Macro: ~a~%"
+%extended-lambda
+"Syntax in if statement"
+"**Invalid if expression: ~a~%"
+""
+defmacro
+deflocal
+call-next-method
+expose
+defmodule
+"#<term: ~a>"
+"(%special:~a ~a)"
+"(if "
+" "
+" "
+")"
+"(lambda "
+")"
+"("
+" "
+")"
+"(progn"
+" "
+")"
+"(setq "
+")"
+"(let ("
+") "
+")"
+"(exp: "
+")"
+"rec ("
+")"
+"#<Term: "
+">"
+"#<decl:"
+">"
+"test.em"
+(Syntax-Error translate get-module-translator test)
+((strip (union (import standard0) (import list-fns) (import syntx-env) (import scan-args))) Syntax-Error translate get-module-translator test)
+(0)
+(0)
+(1)
+(0)
+make-installed-module
+(0)
+(0)
+(0)
+(0)
+(1)
+install-local-bindings
+(1)
+(3)
+make-interface
+(output-compile-state write-compile-unit output-sc-state optimize-code strip-module boot-module micro-optimize-code)
+((strip (union (except (cadr) (union (import standard0))) (import list-fns) (import comp-defn) (import compstate) (import mod-info) (import syntx-env) (import props) (import instruct) (import assem) (import peep-drv) (import byte-stream))) output-compile-state write-compile-unit output-sc-state optimize-code strip-module boot-module micro-optimize-code)
+100000000
+fn-info
+docs
+fn-docs
+directory-file
+records
+"."
+"          "
+"WARNING: DO NOT EDIT THIS FILE!"
+"~d "
+"~d~%"
+"~d"
+"~s~%"
+"~s~%"
+""
+(read-name read-entry make-directory finalise-dbase output-record make-info)
+((strip (union (import eulisp0))) read-name read-entry make-directory finalise-dbase output-record make-info)
+"~a.doc"
+gen-docs
+(complete-docs add-documented-entry docs-name initialize-docs)
+((strip (union (import eulisp0) (import fn-docs) (import abs-syntx))) complete-docs add-documented-entry docs-name initialize-docs)
+Compile-Time-Error
+(msg)
+""
+(values)
+gen-code
+code-gen
+value-ref
+(id loc orig state)
+some-value
+set-value-ref
+(id loc orig state)
+"Could not env ~a in ~a~%"
+callbacks
+"Unknown special"
+a
+b
+c
+d
+e
+9999
+"Function called with wrong number of args"
+"Function called with wrong number of args (should be ~a): ~%~a~%"
+do-callbacks
+(obj applic)
+setter-setter-function
+"Unknown special"
+"Bad special: ~a~%"
+allocable-defn-p
+(defn)
+find-closure
+(obj)
+enclosing-env
+(obj)
+allocate-closure-code
+(lam argcode state)
+((i-set-type))
+generic-code-gen-for-decl
+(decl state)
+inhibit-alloc
+(x)
+"~a "
+(Compile-Time-Error generate-code laststate)
+((strip (union (except (fold) (union (import standard))) (import list-fns) (import syntx-utl) (import props) (import syntx-env) (import generate) (import pass) (import rshow) (import stop) (import gen-docs))) Compile-Time-Error generate-code laststate)
+link2
+"~a~%"
+"Whups"
+"(~a->~a)"
+(mk-local-id-mker link-vector-to-stream link-vector)
+((strip (union (import standard0) (import list-fns) (import comp-defn) (import byte-stream))) mk-local-id-mker link-vector-to-stream link-vector)
+iface
+sub-specs
+(x)
+get-dep-list
+(x)
+make-iface-export
+(decl)
+(write-interface-file)
+((strip (union (import standard0) (import list-fns) (import props) (import syntx-env) (import comp-utl) (import syntx-utl))) write-interface-file)
+Link-Error
+combine
+"FEEL_LOAD_PATH"
+"."
+temp-file
+bsd
+(boot init macros0 extras0 defs lock standard0)
+".:/net/brad/denton_export/denton/You/NewYou/Compiler:/net//brad/denton_export/denton/You/NewYou/Interfaces"
+".:/net/brad/denton_export/denton/You/NewYou/Compiler/Generic:/net//brad/denton_export/denton/You/NewYou/Interfaces/Generic"
+generic
+"~a:~a"
+"FEEL_OBJS_PATH"
+"ASCIIBYTES"
+"Module not loaded"
+"Binding doesn't exist"
+"get mod data"
+done
+%%-no-module-%%
+(0)
+(0)
+(1)
+"Munge starts..."
+"Unknown module"
+"Unknown module 2"
+(defun get-name (mod-name name mod-data) (let ((lst (assq mod-name mod-data))) (if (null lst) (error "Unresolved reference" Link-Error (quote error-value) mod-name) (let ((xx (assq name (cdr lst)))) (if (not (null xx)) (cdr xx) (let ((sym (gensym))) (nconc lst (list (cons name sym))) sym))))))
+".:/net/brad/denton_export/denton/You/NewYou/Interfaces:/net/brad/denton_export/denton/You/Interfaces"
+"FEEL_INTF_PATH"
+(combine-user-modules combine-mods-with-file combine-modules)
+((strip (union (except (fold) (union (import standard))) (only (pair) (union (import standard0))) (import list-fns) (import byte-stream) (import comp-defn) (import instruct) (import assem) (import link2) (import module-operators) (only (boot-module-list load-bytecodes) (union (import bci))))) combine-user-modules combine-mods-with-file combine-modules)
+Compiler-Error
+out-fast
+"unknown object type"
+"Can't deal with non-optimised code"
+" "
+(write-fastbytes)
+((strip (union (import standard0) (import list-fns) (import comp-utl) (import comp-defn))) write-fastbytes)
+in-fast
+"~a: ~a bytes ~a statics~%"
+"Module not found"
+"Binding not found"
+%-no-module-%
+".fm"
+".em"
+"FEEL_OBJS_PATH"
+"."
+"~a~a"
+(set-debug load-module)
+((strip (union (import standard0) (import list-fns) (only (all-registered-modules) (union (import boot))) (only (boot-module-list load-bytecodes) (union (import bci))) (import module-operators) (import byte-stream) (import comp-utl) (import bci) (import root))) set-debug load-module)
+triang
+"Answer: ~a~%"
+(testtriang gogogo try)
+((strip (union (rename ((binary+_Integer binary+) (binary=_Integer =)) (union (except (= binary+) (union (import standard))))))) testtriang gogogo try)
+foo
+strtest
+bar
+yowzer
+(x)
+"XX"
+"a is: ~a~%"
+"going..."
+((strip (union (import standard0) (import bci))))
+low-asm
+link-table
+tab
+local-link-tab
+((strip (union (import standard0) (import list-fns))))
+compile
+"Compile failed. Abandoning...~%"
+"Compiler-Error"
+"A compiler error has occured"
+compile-time-error-handler
+(cond cont)
+"Compiler Failure"
+(boot-utils newinit initmeth)
+(boot macros0 extras0 defs lock standard0)
+(compile-module comp2sc)
+((strip (union (import standard0) (import list-fns) (import comp-utl) (import syntax) (import pass-0) (import gen-code) (import iface) (import output) (import out-fast) (import rshow) (import stop))) compile-module comp2sc)

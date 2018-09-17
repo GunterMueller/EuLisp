@@ -1,0 +1,1 @@
+((name strtest) (dependencies (bci standard0 arith extras0 stream class-names telos1 boot init)) (exported-ids))

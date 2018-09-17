@@ -1,0 +1,12 @@
+((dependencies)
+ (exported-ids 
+   ((name . |<bytefunction-class>|) (address |bci| |<bytefunction-class>|) (class . unknown) (argtype . -1) (position 0))
+   ((name . |<bytefunction>|) (address |bci| |<bytefunction>|) (class . unknown) (argtype . -1) (position 1))
+   ((name . |<extended-bytefunction>|) (address |bci| |<extended-bytefunction>|) (class . unknown) (argtype . -1) (position 2))
+   ((name . |add-code-vector|) (address |bci| |add-code-vector|) (class . function) (argtype . 4) (position 3))
+   ((name . |load-bytecodes|) (address |bci| |load-bytecodes|) (class . function) (argtype . 1) (position 4))
+   ((name . |set-module-statics|) (address |bci| |set-module-statics|) (class . function) (argtype . 2) (position 5))
+   ((name . |boot-module-list|) (address |bci| |boot-module-list|) (class . function) (argtype . 0) (position 6))
+   ((name . |byte-counts|) (address |bci| |byte-counts|) (class . function) (argtype . 0) (position 7))
+   ((name . |get-bci-codepos|) (address |bci| |get-bci-codepos|) (class . function) (argtype . 0) (position 8))
+   ((name . |set-bc-global|) (address |bci| |set-bc-global|) (class . function) (argtype . 2) (position 9))))

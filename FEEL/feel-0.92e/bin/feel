@@ -1,0 +1,75 @@
+#!/bin/sh
+
+# These lines _should_ be changed to reflect your system:
+
+FEEL_PATH=${FEEL_PATH-${HOME}/Feel}
+ 
+echo $FEEL_PATH
+
+#check you have an arch command, or fake it:
+if [ "`uname`" = "IRIX" ]
+then
+  ARCH=sgi
+else
+  ARCH=`arch`
+fi
+
+# where interface (.i) files live
+FEEL_INTF_PATH=${FEEL_INTF_PATH-.}:${FEEL_PATH}/Boot/Interfaces:${FEEL_PATH}/Boot/CBoot:${FEEL_PATH}/Boot/Compiler
+
+# where object (.sc and .fm) files live
+FEEL_OBJS_PATH=${FEEL_OBJS_PATH-.}:${FEEL_PATH}/Boot/Interfaces:${FEEL_PATH}/Boot/CBoot:${FEEL_PATH}/Boot/Compiler
+
+# where image (.ebc and .est) files live
+FEEL_BOOT_PATH=${FEEL_BOOT_PATH-.}:${FEEL_PATH}/Images
+
+# where .doc files live
+FEEL_DOCS_PATH=${FEEL_DOCS_PATH-.}:${FEEL_PATH}/Docs
+
+params=""
+if [ x$FEEL_DEFAULT = x ] 
+then 
+	FEEL_DEFAULT=${FEEL_PATH}/Boot:${FEEL_PATH}/Modules:${FEEL_PATH}/Boot/Compiler
+fi
+
+# where module (.em) files live
+FEEL_LOAD_PATH=${FEEL_LOAD_PATH-${XXX-.}}:${FEEL_DEFAULT}
+
+# default boot image
+#IMAGE='image'
+IMAGE='loader' 
+
+# name of appropriate executable 
+EXEC=${FEEL_EXEC-${FEEL_PATH}/lib/you.${ARCH}}
+
+# parse args
+while [ $# -gt 0 ]
+do
+	case "$1" in
+	-noimage)
+		IMAGE="";;
+	-boot)
+		IMAGE="$2"
+		shift
+		;;
+	-sysv)
+		EXEC="${EXEC}.sysv"
+		;;
+        -compiler)
+                IMAGE=compiler
+                ;;
+	*)
+		params="$params $1";;
+	esac
+	shift
+done
+
+if [ x$IMAGE != x ]
+then
+	IMAGE="-boot ${IMAGE}"
+fi
+
+export 	FEEL_INTF_PATH FEEL_OBJS_PATH FEEL_BOOT_PATH FEEL_LOAD_PATH FEEL_DOCS_PATH
+
+echo ${EXEC} $IMAGE $params
+${EXEC} $IMAGE $params

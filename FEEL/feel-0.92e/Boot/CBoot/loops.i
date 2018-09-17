@@ -1,0 +1,1 @@
+((name loops) (dependencies (boot)) (exported-ids ((address loops for) (name . for) (mutable ()) (class . macro) (argtype (t . 4))) ((address loops while) (name . while) (mutable ()) (class . macro) (argtype (t . 2)))))

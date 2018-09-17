@@ -1,0 +1,62 @@
+#!/bin/sh
+COMPRESS="gzip -v"
+SUB=tgz
+#COMPRESS="compress -v"
+#SUB=taz
+
+# name head revisions of all RCS files
+
+#RCSNAME=feel-`awk '/define MAJOR_VERSION/{printf("%s-",$3)}
+#              /define MINOR_VERSION/{print $3}' < Src/version.h`
+
+RCSNAME=feel-0-92e
+
+#echo $RCSNAME
+#rcs -N${RCSNAME}: RCS/* Boot/RCS/* Modules/RCS/* \
+#		Man/RCS/* Src/RCS/* bin/RCS/* \
+#		Boot/CBoot/RCS/* Boot/Compiler/RCS/* \
+#		AddOns/RCS/* bin/gcc2/RCS/* d-gc/RCS/* 
+
+# put documentation files in the right place
+
+#cp Boot/CBoot/*.doc Docs
+
+#VERSION=`awk '/define MAJOR_VERSION/{printf("%s.",$3)}
+#              /define MINOR_VERSION/{print $3}' < Src/version.h`
+
+VERSION=0.92e
+
+# make the basic distribution
+
+tar cvf - README BUGS \
+	  Src/*.[chs] Src/Makefile Src/Makefile.386 \
+          Src/*.lex Src/*.skl Src/i860-diffs \
+	  Boot/Makefile Boot/*.em \
+          Boot/you.mods Boot/Interfaces/*.i \
+	  Modules/*.em Modules/*scm Docs/*.doc \
+	  Boot/CBoot/Makefile Boot/CBoot/*.em \
+	  Boot/CBoot/*.i  Boot/CBoot/*.sc \
+	  Boot/Compiler/Makefile Boot/Compiler/*.em \
+	  Boot/Compiler/*.i Boot/Compiler/*.sc \
+	  Images/*.ebc Images/*.est \
+	Objs/*-elvira.o \
+	AddOns/README AddOns/*.[ch] AddOns/Makefile Objs/*.o \
+	bin/README bin/ecc.2 bin/ecc.ard bin/ecc.new \
+	bin/gcc2 bin/ldn pack \
+	  Man/feel.dvi Man/eulisp.dvi \
+	  Man/*.man Man/man1 \
+	  lib/you.* bin/feel bin/feelc | \
+  $COMPRESS > feel-${VERSION}.${SUB}
+
+# Elvira stuff:
+
+# Extra Compiler stuff:
+#	  Boot/CBoot/Makefile Boot/CBoot/*.em \
+#	  Boot/Compiler/Makefile Boot/Makefile \
+#	  Boot/Compiler/*.i Boot/Compiler/*.sc \
+
+# Compacting gc:
+# d-gc/README d-gc/*.[ch] d-gc/Makefile \
+
+
+echo Version: $VERSION

@@ -1,0 +1,73 @@
+#!/bin/sh
+
+# $Id: ld,v 1.1 1994/03/16 12:30:41 djb Exp $
+# $Log: ld,v $
+# Revision 1.1  1994/03/16  12:30:41  djb
+# Initial revision
+#
+# Revision 1.2  90/11/29  21:48:09  is
+# Changed brad_export to denton_export
+# 
+# Revision 1.1  90/11/29  21:47:24  is
+# Replacement ld script for Eulisp
+# 
+
+PATH=/usr/local/contrib/bin.sun4:/usr/local/bin:/bin:/usr/bin:/usr/ucb:$PATH
+
+# A replacement LD script.
+# Go through the arguements, and try and guess which are the ones
+# which are elvira modules. Construct the setup function
+
+echo "Building init_elvira.c"
+comline=""
+elviram=""
+
+while [ $# -gt 0 ]
+do
+	case "$1" in
+	-d*)	;;
+	-e)	shift ;;
+	/lib/crt0.o) ;;
+	-*)
+		comline="$comline $1";;
+	*init_elvira.o)
+		;;
+	*elvira.o)
+		comline="$comline init_elvira.o $1";;
+	*.o)
+		comline="$comline $1"
+		elviram="$elviram $1";;
+	*)
+		comline="$comline $1";;
+	esac
+	shift
+done
+
+# When we get here, we should have a list of .o files belonging to 
+# Elvira modules
+#
+# Look for their startup routines
+
+elviram=`echo $elviram | sed 's/\.c/.o/g'`
+
+initnames=`nm -gp $elviram | egrep ' T _INIT_' | awk '{print $3}' | sed 's/_//'`
+
+rm -f init_elvira.c
+cat ${SOURCEDIR}/el_linkins.c > init_elvira.c
+
+echo '
+void initialise_elvira_modules(LispObject *stacktop) 
+{
+  dp = nil;
+  dlp = nil;
+
+' >> init_elvira.c
+
+for i in $initnames
+do
+echo "	$i(stacktop);" >> init_elvira.c
+done
+echo "}" >> init_elvira.c
+unset COMPILER_PATH
+gcc -c $ElviraHdrs init_elvira.c &&
+gcc `echo $comline | sed -e 's/\/lib\/Mcrt1.o//'`

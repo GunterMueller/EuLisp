@@ -1,0 +1,67 @@
+#!/bin/sh
+
+SOURCES=
+OBJS=
+MODS=
+OLDOBJS=
+IMAGE=
+MODMAP=you.mods
+PARAMS="-heap 10"
+
+# all the .sc files in the CBoot directory -- copied from CBoot Makefile.
+BOOTOBJS="boot.sc init.sc macros0.sc extras0.sc defs.sc gens.sc numbers.sc null.sc cons.sc vector.sc list.sc telos1.sc copy.sc stream.sc error0.sc thread.sc lock.sc table.sc character.sc string.sc collect.sc condition.sc eulisp0.sc standard.sc standard0.sc list-fns.sc loops.sc"
+
+# the .sc files that make up the loader additions in the Compiler directory
+# -- easier if all images built contain this -- copied from Compiler Makefile
+LOADOBJS="byte-stream.sc comp-utl.sc in-fast.sc"
+
+# loop through args, picking up params, building up source and obj lists
+while [ $# -gt 0 ]
+do
+	case "$1" in
+	 *.em)
+	        mod=`echo "$1" | sed -e 's/\.em//g'`
+		SOURCES="$SOURCES ${mod}.em"	
+		OBJS="$OBJS ${mod}.sc"
+		MODS="$MODS $mod"
+		;;
+	 *.sc)
+		OLDOBJS="$OLDOBJS $1"
+		;;
+	 -o)
+		IMAGE="$2"
+	        shift
+		;;
+	 -m)
+		MODMAP="$2"
+		shift
+		;;
+	 *)
+		PARAMS="$PARAMS $1"
+		;;
+	esac
+	shift
+done  
+
+# compile SOURCES into OBJS individually
+
+if [ x"$MODS" != x ]
+then
+	for mod in ${MODS}
+	do
+	   rm -f ${mod}.sc
+	   echo "(!> ${mod})(!> compile)(compile-module (quote ${mod}))(!> user)(exit)" | feel -compiler $PARAMS
+	   test -f ${mod}.sc
+	done
+fi
+
+# if -o option then link BOOTOBJS, LOADOBJS, OLDOBJS and OBJS into IMAGE
+
+if [ x"$IMAGE" != x ]
+then
+	rm -f ${IMAGE}.ebc
+	(echo "(!> combine)(combine-mods-with-file (quote ${IMAGE}) \"${MODMAP}\" (quote (" ; \
+	(echo "${BOOTOBJS} ${LOADOBJS} ${OLDOBJS} ${OBJS}" | sed -e 's/\.sc/ /g') ; \
+	echo ")))(!> user)(exit)") | feel -compiler $PARAMS
+	test -f ${IMAGE}.ebc
+fi
