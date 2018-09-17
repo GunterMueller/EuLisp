@@ -653,6 +653,7 @@ int equals(arg1,arg2)
     xlcerror("equals called with non-numeric arg", arg2, NIL);
   }
   xlcerror("equals called with non-numeric arg", arg1, NIL);
+  return 0; /* not reached */
 }
 
 /* vectorequal - compare two vectors */

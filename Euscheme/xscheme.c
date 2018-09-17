@@ -11,7 +11,7 @@
   (envp(sp[0]) && (codep(sp[1]) || csubrp(sp[1])) && !ispointer(sp[2]))
 
 /* global variables */
-jmp_buf top_level;
+JMP_BUF top_level;
 int clargc;	/* command line argument count */
 char **clargv;	/* array of command line arguments */
 void do_backtrace();
@@ -173,7 +173,7 @@ void xlmain(argc,argv)
     }
 
     /* setup an initialization error handler */
-    if (setjmp(top_level)) {
+    if (SETJMP(top_level)) {
       fprintf(stderr, "Error in initialisation\n");
       exit(2);
     }
@@ -190,7 +190,7 @@ void xlmain(argc,argv)
     code = (boundp(code) ? getvalue(code) : NIL);
 
     /* trap errors */
-    if (setjmp(top_level)) {
+    if (SETJMP(top_level)) {
 	code = xlenter_module("*TOPLEVEL*",root_module);
 	code = (boundp(code) ? getvalue(code) : NIL);
 	xlfun = xlenv = xlval = NIL;
@@ -226,7 +226,7 @@ static void do_xltoplevel(cc)
 {
   if (getvalue(s_general_error) == s_unbound) {	/* no conditions yet */
     stdputstr("[ back to top level ]\n");
-    longjmp(top_level,1);
+    LONGJMP(top_level,1);
   }
 
   do_xlerror("user interrupt", NIL, s_user_intr, cc);
@@ -293,7 +293,7 @@ void do_xlerror(msg, arg, errname, cc)
 {
   LVAL cond, condcl, cont;
   extern LVAL current_continuation();
-  extern jmp_buf bc_dispatch;
+  extern JMP_BUF bc_dispatch;
 
 #ifdef NOERROR
   xlerror(msg, arg);
@@ -322,7 +322,7 @@ void do_xlerror(msg, arg, errname, cc)
     push(cond);			/* condition */
     xlargc = 2;
     xlapply();
-    longjmp(bc_dispatch,1);
+    LONGJMP(bc_dispatch,1);
   }
 }
 
@@ -351,7 +351,7 @@ void callerrorhandler()
 
     /* no handler, just reset back to the top level */
     /* this probably leaves the thread state in a state */
-    longjmp(top_level,1);
+    LONGJMP(top_level,1);
 }
 
 /* xlabort - print an error message and abort */
@@ -369,7 +369,7 @@ void xlabort(msg)
 
     /* reset back to the top level */
     oscheck();			/* an opportunity to break out */
-    longjmp(top_level,1);
+    LONGJMP(top_level,1);
 }
 
 /* xlfatal - print a fatal error message and exit */

@@ -4,8 +4,14 @@
 /* Euscheme code Copyright (c) 1994 Russell Bradford */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <ctype.h>
 #include <setjmp.h>
+#ifdef STRINGH
+#include <string.h>
+#else
+#include <strings.h>
+#endif
 
 /* AFMT		printf format for addresses ("%x") */
 /* OFFTYPE	number the size of an address (int) */
@@ -105,6 +111,17 @@ void free(void *);
 #ifdef MSDOS
 #define AFMT		"%lx"
 #define OFFTYPE		long
+#endif
+
+/* save signal masks */
+#ifdef _POSIX_SOURCE
+#define JMP_BUF sigjmp_buf
+#define LONGJMP siglongjmp
+#define SETJMP(env) sigsetjmp(env, 1)
+#else
+#define JMP_BUF jmp_buf
+#define LONGJMP longjmp
+#define SETJMP(env) setjmp(env)
 #endif
 
 /* for segmented addresses on Intel processors */
@@ -345,13 +362,13 @@ extern FILE *filein;
 
 /* vector access macros */
 #define getsize(x)	((x)->n_vsize)
-#define getelement(x,i)	((x)->n_vdata[i])
+#define getelement(x,i)	((x)->n_vdata[(int)(i)])
 #define setelement(x,i,v) vupdate(x,i,v)
 
 /* object access macros */
 #define getclass(x)	((x)->n_vdata[0])
 #define setclass(x,v)	vupdate(x,0,v)
-#define getivar(x,i)	((x)->n_vdata[i])
+#define getivar(x,i)	((x)->n_vdata[(int)(i)])
 #define setivar(x,i,v)	vupdate(x,i,v)
 
 /* promise access macros */

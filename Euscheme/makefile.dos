@@ -1,4 +1,4 @@
-VERSION=036
+VERSION=0361
 
 CFLAGS = -DNOTDEF
 DOCS = eunotes.htm euscheme.1 

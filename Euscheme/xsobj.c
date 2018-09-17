@@ -364,7 +364,9 @@ LVAL xinitialize_class()
   static char *cfn_name = "initialize <class>";
   LVAL obj, inits, super, val;
   int size;
+#if 0
   extern LVAL s_structure;
+#endif
 
   obj = xlgetarg();
   inits = xlgalist();
@@ -1169,7 +1171,8 @@ static LVAL applicable_methods(gf, classes)
     xlputstr(curoutput(), ">\n");
   }
 #else
-  qsort((char *)buf, app, sizeof(LVAL), specific);
+  /*qsort((char *)buf, app, sizeof(LVAL), specific);*/
+  qsort(buf, app, sizeof(LVAL), (int(*)(const void*,const void*))specific);
 #endif
 
   applicable = NIL;

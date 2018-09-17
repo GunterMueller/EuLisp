@@ -20,7 +20,7 @@
 /* globals */
 int trace=FALSE;	/* trace enable */
 int xlargc;		/* argument count */
-jmp_buf bc_dispatch;	/* bytecode dispatcher */
+JMP_BUF bc_dispatch;	/* bytecode dispatcher */
 
 /* external variables */
 extern LVAL xlfun,xlenv,xlval;
@@ -108,7 +108,7 @@ void xlexecute(fun)
     base = pc = getcodestr(xlfun);
 
     /* setup a target for the error handler */
-    setjmp(bc_dispatch);
+    SETJMP(bc_dispatch);
     
     /* execute the code */
     for (;;) {

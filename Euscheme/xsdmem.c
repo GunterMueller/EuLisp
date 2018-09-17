@@ -45,7 +45,7 @@ extern LVAL tmpfilelist;
 #endif
 
 /* external routines */
-extern char *calloc();
+/*extern char *calloc();*/
 
 /* forward declarations */
 #ifdef __STDC__

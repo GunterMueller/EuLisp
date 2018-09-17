@@ -10,8 +10,10 @@ void xlcontinue(void);
 void xlbreak(void);
 void xlcleanup(void);
 void xltoplevel(void);
+void xltoplevel_int(void);
 void xlfail(char *msg, LVAL err);
 void xlerror(char *msg,LVAL arg);
+void xlinterror(char *msg, LVAL arg, LVAL errname);
 void callerrorhandler(void);
 void xlabort(char *msg);
 void xlfatal(char *msg);
@@ -278,6 +280,7 @@ void xlstkover(void);
 /* xsio.c */
 int xlgetc(LVAL fptr);
 void xlungetc(LVAL fptr,int ch);
+int xlpeekchar(LVAL fptr);
 void xlputc(LVAL fptr,int ch);
 void xlflush(void);
 void stdputstr(char *str);
@@ -333,6 +336,8 @@ LVAL xgtr(void);
 /* xsobj.c */
 void xloinit(void);
 LVAL class_of(LVAL);
+int xlsubclassp(LVAL cl1, LVAL cl2);
+void telos_bad_ref_error(LVAL object, LVAL wanted, int interp);
 
 /* xsprint.c */
 void xlprin1(LVAL expr,LVAL file);

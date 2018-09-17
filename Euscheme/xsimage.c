@@ -34,7 +34,7 @@ extern LVAL *vtop;		/* top of vector space */
 
 /* global variables */
 extern LVAL eof_object,default_object;
-extern jmp_buf top_level;
+extern JMP_BUF top_level;
 extern FUNDEF funtab[];
 
 /* local variables */

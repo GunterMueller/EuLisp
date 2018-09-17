@@ -18,15 +18,14 @@ SunOS-4:
 # Solaris
 #-lsocket -lnsl for sockets
 SunOS-5:
-	$(MAKE) all "CFLAGS = -DUNIX -g" "LDFLAGS = -g" "LIBS = -lm" \
-                "CC = cc"
+	$(MAKE) all "CFLAGS = -DUNIX -g" "LDFLAGS = -g" "LIBS = -lm" "CC = cc"
 
 AIX:
 	$(MAKE) all "CFLAGS = -DUNIX -D_ALL_SOURCE -DSOCK" "LIBS = -lm" "CC = c89"
 
 # -DOLD_LINUX for ancient versions of Linux
 Linux:
-	$(MAKE) all "CFLAGS = -DUNIX -DSIGNAL -DRESTORE_SIGNAL" \
+	$(MAKE) all "CFLAGS = -DUNIX -DSIGNAL -DSTRINGH -Wall" \
                 "LIBS = -lm" "CC = cc"
 
 # Stardent

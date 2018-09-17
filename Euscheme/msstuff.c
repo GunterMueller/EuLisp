@@ -25,18 +25,28 @@ unsigned _stklen=16384;
 /* external variables */
 extern LVAL s_unbound,true;
 extern FILE *tfp;
+
+/* old errnos were everywhere */
+#if 0
 #if defined(CODEBLDR) || defined(RISCOS)
 #include <errno.h>
 #else
 extern int errno;
 #endif
+#endif
+
+/* new place for errno */
+#include <errno.h>
+
 #ifdef UNIX
 int reading;
 #endif
 
 /* local variables */
 static char lbuf[LBSIZE];
+#ifndef UNIX
 static int lpos[LBSIZE];
+#endif
 static int lindex;
 static int lcount;
 static int lposition;
@@ -64,9 +74,9 @@ LVAL tmpfilelist = NIL;
 #endif
 
 #ifdef __STDC__
-static void xinfo(void);
 static void xflush(void);
 #ifndef UNIX
+static void xinfo(void);
 static int xgetc(void);
 static void xputc(int ch);
 static int xcheck(void);
@@ -560,8 +570,7 @@ void oscheck_int()
 #endif
 }
 
-
-
+#ifndef UNIX
 /* xinfo - show information on control-t */
 static void xinfo()
 {
@@ -574,6 +583,7 @@ static void xinfo()
     errputstr(buf);
 */
 }
+#endif
 
 /* xflush - flush the input line buffer and start a new line */
 static void xflush()

@@ -42,7 +42,7 @@ LVAL s_socket_error;
 #endif
 
 /* external variables */
-extern jmp_buf top_level;
+extern JMP_BUF top_level;
 extern FUNDEF funtab[];
 extern int xsubrcnt;
 extern int csubrcnt;

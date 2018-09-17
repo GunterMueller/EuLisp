@@ -27,7 +27,7 @@ static void putsubr(LVAL fptr,char *tag,LVAL val);
 static void putclosure(LVAL fptr,char *tag,LVAL val);
 static void putcode(LVAL fptr,char *tag,LVAL val);
 static void putnumber(LVAL fptr,FIXTYPE n);
-static void putoct(LVAL fptr,int n);
+/*static void putoct(LVAL fptr,int n);*/
 static void putflonum(LVAL fptr,FLOTYPE n);
 static void putcharacter(LVAL fptr,int ch);
 static void putgeneric(LVAL fptr,LVAL vptr);
@@ -45,7 +45,7 @@ static void putsubr();
 static void putclosure();
 static void putcode();
 static void putnumber();
-static void putoct();
+/*static void putoct();*/
 static void putflonum();
 static void putcharacter();
 static void putgeneric();
@@ -119,14 +119,16 @@ static void print(fptr,vptr,escflag,depth)
 		    break;
 		}
 	        print(fptr,car(nptr),escflag,depth+1);
-		if ((next = cdr(nptr)) != NIL)
-		    if (consp(next))
+		if ((next = cdr(nptr)) != NIL) {
+  		    if (consp(next)) {
 			xlputc(fptr,' ');
+		    }
 		    else {
 			xlputstr(fptr," . ");
 			print(fptr,next,escflag,depth+1);
 			break;
 		    }
+		}
 		nptr = next;
 	    }
 	    xlputc(fptr,')');
@@ -224,8 +226,10 @@ static void print(fptr,vptr,escflag,depth)
 static void putatm(fptr,tag,val)
   LVAL fptr; char *tag; LVAL val;
 {
-    sprintf(buf,"#<%s #",tag); xlputstr(fptr,buf);
-    sprintf(buf,AFMT,val); xlputstr(fptr,buf);
+    sprintf(buf,"#<%s #",tag);
+    xlputstr(fptr,buf);
+    sprintf(buf,AFMT,(int)val);
+    xlputstr(fptr,buf);
     xlputc(fptr,'>');
 }
 
@@ -392,7 +396,7 @@ static void putthread(fptr, val, cls)
       xlprin1(getivar(val, i), fptr);
   }
 
-  sprintf(buf, ">", val);
+  sprintf(buf, ">");
   xlputstr(fptr, buf);  
 }
 
@@ -485,12 +489,12 @@ static void putnumber(fptr,n)
 }
 
 /* putoct - output an octal byte value */
-static void putoct(fptr,n)
+/*static void putoct(fptr,n)
   LVAL fptr; int n;
 {
     sprintf(buf,"%03o",n);
     xlputstr(fptr,buf);
-}
+}*/
 
 /* putflonum - output a flonum */
 static void putflonum(fptr,n)

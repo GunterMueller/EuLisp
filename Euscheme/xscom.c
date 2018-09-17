@@ -160,85 +160,83 @@ LVAL xlmember();
 /* integrable function table */
 typedef struct { char *nt_name; int nt_code,nt_args; } NTDEF;
 static NTDEF *nptr,ntab[] = {
-	"atom?",		OP_ATOM,	1,
-	"eq?",			OP_EQ,		2,
-	"null?",		OP_NULL,	1,
-	"not",			OP_NULL,	1,
-	"cons",			OP_CONS,	2,
-	"car",			OP_CAR,		1,
-	"cdr",			OP_CDR,		1,
-	"set-car!",		OP_SETCAR,	2,
-	"set-cdr!",		OP_SETCDR,	2,
-	"+",			OP_ADD,		-2,
-	"-",			OP_SUB,		-2,
-	"*",			OP_MUL,		-2,
-	"/",			OP_DIV,		-2,
-	"quotient",		OP_QUO,		-2,
-	"<",			OP_LSS,		-2,
-	"=",			OP_EQL,		-2,
-	">",			OP_GTR,		-2,
-	"class-of",             OP_CLASSOF,      1,
-	"%GETIVAR",             OP_GETIVAR,      2,
-	"%SETIVAR",             OP_SETIVAR,      3,
-	"get",                  OP_GET,          2,
-	"put",                  OP_PUT,          3,
-	"current-module",       OP_CURMOD,       0,
-	"pair?",                OP_PAIRP,        1,
-	"symbol?",              OP_SYMBOLP,      1,
-	"vector?",              OP_VECTORP,      1,
-	"append",               OP_APPEND,       -2,
-	"list",                 OP_LIST,         -2,
-	"length",               OP_LENGTH,       1,
-	"reverse",              OP_REVERSE,      1,
-	"caar",                 OP_CAAR,         1,
-	"cadr",                 OP_CADR,         1,
-	"cdar",                 OP_CDAR,         1,
-	"cddr",                 OP_CDDR,         1,
-	"get-syntax",		OP_GETSYNTAX,    2,
-	"put-syntax",		OP_PUTSYNTAX,    3,
+	{"atom?",		OP_ATOM,	1},
+	{"eq?",			OP_EQ,		2},
+	{"null?",		OP_NULL,	1},
+	{"not",			OP_NULL,	1},
+	{"cons",			OP_CONS,	2},
+	{"car",			OP_CAR,		1},
+	{"cdr",			OP_CDR,		1},
+	{"set-car!",		OP_SETCAR,	2},
+	{"set-cdr!",		OP_SETCDR,	2},
+	{"+",			OP_ADD,		-2},
+	{"-",			OP_SUB,		-2},
+	{"*",			OP_MUL,		-2},
+	{"/",			OP_DIV,		-2},
+	{"quotient",		OP_QUO,		-2},
+	{"<",			OP_LSS,		-2},
+	{"=",			OP_EQL,		-2},
+	{">",			OP_GTR,		-2},
+	{"class-of",             OP_CLASSOF,      1},
+	{"%GETIVAR",             OP_GETIVAR,      2},
+	{"%SETIVAR",             OP_SETIVAR,      3},
+	{"get",                  OP_GET,          2},
+	{"put",                  OP_PUT,          3},
+	{"current-module",       OP_CURMOD,       0},
+	{"pair?",                OP_PAIRP,        1},
+	{"symbol?",              OP_SYMBOLP,      1},
+	{"vector?",              OP_VECTORP,      1},
+	{"append",               OP_APPEND,       -2},
+	{"list",                 OP_LIST,         -2},
+	{"length",               OP_LENGTH,       1},
+	{"reverse",              OP_REVERSE,      1},
+	{"caar",                 OP_CAAR,         1},
+	{"cadr",                 OP_CADR,         1},
+	{"cdar",                 OP_CDAR,         1},
+	{"cddr",                 OP_CDDR,         1},
+	{"get-syntax",		OP_GETSYNTAX,    2},
+	{"put-syntax",		OP_PUTSYNTAX,    3},
 #ifndef NO_CHECK_REF
-	"check-ref",    	OP_CHECKREF,     2,
+	{"check-ref",    	OP_CHECKREF,     2},
 #endif
-	0
+	{(char*)0, 0, 0}
 };
 
 /* special form table */
 typedef struct { char *ft_name; void (*ft_fcn)(); } FTDEF;
 FTDEF ftab[] = {
-	"quote",	do_quote,
-	"lambda",	do_lambda,
-	"delay",	do_delay,
-	"let",		do_let,
-	"let*",		do_letstar,
-	"letrec",	do_letrec,
-	"define",	do_define,
-	"defconstant",	do_defconstant,
-	"setq",		do_set,
-	"if",		do_if,
-	"cond",		do_cond,
-	"begin",	do_begin,
-	"sequence",	do_begin,
-	"and",		do_and,
-	"or",		do_or,
-	"while",	do_while,
-	"access",	do_access,
-        "defmodule",    do_defmodule,
-	"export",       do_export,
-	"expose",       do_expose,
-	"enter-module", do_enter_module,
-	"!>",           do_enter_module,
-	"reenter-module",
-			do_reenter_module,
-	"!>>",          do_reenter_module,
-        "%IMPORT",       do_import,
-	"define-generic",   do_define_generic,
-	"define-method",    do_define_method,
-	"call-next-method",
-			do_cnm,
-	"next-method?", do_next_method_p,
-	"defclass",     do_defclass,
-	"defcondition", do_defcondition,
-	0
+	{"quote",	do_quote},
+	{"lambda",	do_lambda},
+	{"delay",	do_delay},
+	{"let",		do_let},
+	{"let*",		do_letstar},
+	{"letrec",	do_letrec},
+	{"define",	do_define},
+	{"defconstant",	do_defconstant},
+	{"setq",		do_set},
+	{"if",		do_if},
+	{"cond",		do_cond},
+	{"begin",	do_begin},
+	{"sequence",	do_begin},
+	{"and",		do_and},
+	{"or",		do_or},
+	{"while",	do_while},
+	{"access",	do_access},
+        {"defmodule",    do_defmodule},
+	{"export",       do_export},
+	{"expose",       do_expose},
+	{"enter-module", do_enter_module},
+	{"!>",           do_enter_module},
+	{"reenter-module", do_reenter_module},
+	{"!>>",          do_reenter_module},
+        {"%IMPORT",       do_import},
+	{"define-generic",   do_define_generic},
+	{"define-method",    do_define_method},
+	{"call-next-method", do_cnm},
+	{"next-method?", do_next_method_p},
+	{"defclass",     do_defclass},
+	{"defcondition", do_defcondition},
+	{(char*)0, (void(*)())0}
 };
 
 /* xlcompile - compile an expression */
@@ -362,7 +360,7 @@ static void do_define(form,cont)
 static void do_defconstant(form,cont)
   LVAL form; int cont;
 {
-  LVAL sym, val;
+  LVAL sym;
   int off;
 
   if (atom(form))
@@ -3335,7 +3333,7 @@ static void check_slot_options(slots)
     if (!consp(slot))
       xlerror("bad slot description in defclass", slot);
 
-    if (length(slot) & 1 == 0)
+    if ((length(slot) & 1) == 0)
       xlerror("odd-length slot description in defclass", slot);
 
     for (slot = cdr(slot); slot; slot = cdr(cdr(slot))) {
@@ -3357,9 +3355,7 @@ static void check_slot_options(slots)
 static void check_class_options(classopts)
   LVAL classopts;
 {
-  LVAL kwd;
-
-  if (length(classopts) & 1 == 1)
+  if ((length(classopts) & 1) == 1)
     xlerror("odd-length class option list in defclass", classopts);
 
   for (; classopts; classopts = cdr(cdr(classopts))) {
@@ -3622,7 +3618,9 @@ int decode_instruction(fptr,code,lc,env)
     if ((tmp = getcname(code)) != NIL)
 	sprintf(buf,"%s:%04x %02x ",getstring(getpname(tmp)),lc,*cp);
     else {
-	sprintf(buf,AFMT,code); xlputstr(fptr,buf); fflush(getfile(fptr));
+	sprintf(buf,AFMT,code);
+	xlputstr(fptr,buf);
+	fflush(getfile(fptr));
     	sprintf(buf,":%04x %02x ",lc,*cp);
     }
     xlputstr(fptr,buf); fflush(getfile(fptr));

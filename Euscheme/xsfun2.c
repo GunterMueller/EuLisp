@@ -7,7 +7,7 @@
 #include "xsobj.h"
 
 /* external variables */
-extern jmp_buf top_level;
+extern JMP_BUF top_level;
 extern LVAL eof_object,true;
 extern LVAL xlfun,xlenv,xlval;
 extern int prbreadth,prdepth;
@@ -1328,7 +1328,7 @@ LVAL xnumstring()
       xlbadtype(arg, "<number>", cfn_name);
 
     if (fixp(arg))
-      sprintf(buf, "%d", getfixnum(arg));
+      sprintf(buf, "%ld", getfixnum(arg));
     else
       sprintf(buf, FFMT, getflonum(arg));
 
@@ -1437,7 +1437,7 @@ LVAL xsave()
 LVAL xrestore()
 {
     static char *cfn_name = "restore";
-    extern jmp_buf top_level;
+    extern JMP_BUF top_level;
     char *name;
 
     /* get the file name, verbose flag and print flag */
@@ -1450,7 +1450,7 @@ LVAL xrestore()
 
     /* return directly to the top level */
     stdputstr("[ returning to the top level ]\n");
-    longjmp(top_level,1);
+    LONGJMP(top_level,1);
     return (NIL); /* never reached */
 }
 
@@ -1488,7 +1488,7 @@ LVAL xgc()
 LVAL xerror()
 {
     static char *cfn_name = "error";
-    extern jmp_buf top_level;
+    /*extern JMP_BUF top_level;*/
     LVAL msg;
 
     /* display the error message */
@@ -1518,8 +1518,9 @@ LVAL default_handler()
   static char *cfn_name = "default error handler";
   LVAL condition, fptr, cls, sds, cc;
   int i, len;
-  extern jmp_buf top_level, bc_dispatch;
-  extern LVAL s_stderr, s_backtracep, s_unbound, xlreverse(), get_module();
+  extern JMP_BUF top_level, bc_dispatch;
+  extern LVAL s_stderr, s_unbound, xlreverse(), get_module();
+  /*extern LVAL s_backtracep;*/
   extern void do_backtrace(), set_xlframe();
   LVAL thread_module;
 
@@ -1556,10 +1557,10 @@ LVAL default_handler()
   cpush(cc);
   xlargc = 2;
   xlapply();
-  longjmp(bc_dispatch, 1);
+  LONGJMP(bc_dispatch, 1);
 
  /* never reached */
-  longjmp(top_level,1);
+  LONGJMP(top_level,1);
   return (NIL);
 }
 
@@ -1567,9 +1568,9 @@ LVAL default_handler()
 LVAL xreset()
 {
     static char *cfn_name = "reset";
-    extern jmp_buf top_level;
+    extern JMP_BUF top_level;
     xllastarg();
-    longjmp(top_level,1);
+    LONGJMP(top_level,1);
     return (NIL); /* never reached */
 }
 

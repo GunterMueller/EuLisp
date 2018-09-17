@@ -35,7 +35,7 @@ LVAL xlenter_keyword(name)
   char *name;
 {
     LVAL sym,symbol;
-    int i, namelen;
+    int i;
 
     i = hash(name,HSIZE);
 
